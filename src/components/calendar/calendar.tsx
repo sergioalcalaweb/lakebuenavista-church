@@ -1,9 +1,9 @@
 'use client';
 
 import { es } from 'date-fns/locale';
-import { MonthlyBody } from './monthlyBody';
+import { MonthlyBody } from './monthly-body';
 import { EventApp } from '@/types';
-import { MonthlyNav } from './monthlyNav';
+import { MonthlyNav } from './monthly-nav';
 import { startOfMonth } from 'date-fns';
 
 export default function Calendar({ events }: { events: EventApp[] }) {

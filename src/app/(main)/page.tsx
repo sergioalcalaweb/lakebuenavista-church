@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Motion from "@/components/motion";
-import LinkButton from "@/components/linkButton";
+import LinkButton from "@/components/link-button";
 
 export default function Home() {
   return (
     <main>
       <section
-        className="relative lg:h-screen"
+        className="relative lg:h-screen bg-black"
       >
         <Image
           alt="biblia"

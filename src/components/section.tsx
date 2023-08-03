@@ -9,7 +9,7 @@ interface SectionProps {
 
 const Section = ({ name, image, children }: SectionProps) => (
   <>
-    <div className='relative w-screen-xl h-56 lg:h-96'>
+    <div className='relative w-screen-xl h-56 lg:h-96 bg-black'>
       {image}
       <div
         className='relative mx-auto max-w-screen-xl pt-5 px-6 lg:px-0'
