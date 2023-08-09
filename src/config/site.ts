@@ -26,5 +26,7 @@ export const siteConfig = {
     'Grupos de jóvenes y adultos',
     'Evangelismo',
     'Solidaridad y ayuda social',
+    'Lake Buena Vista Spanish SDA',
+    'Spanish SDA',
   ]
 };

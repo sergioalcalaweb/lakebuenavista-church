@@ -41,5 +41,9 @@ next-env.d.ts
 
 # firebase
 /.firebase/
-
 .firebase/**
+
+# react email
+/.react-email/
+.react-email/**
+
