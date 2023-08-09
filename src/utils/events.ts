@@ -1,15 +1,8 @@
 import { EventApp } from "@/types";
 import { eachDayOfInterval, getDay, isSaturday, isThursday, isWednesday, lastDayOfMonth, startOfMonth } from "date-fns";
 import { daysInWeek } from "@/utils/constants";
-// import { API_URL } from "@/config";
 
 export const getEvents = async () => {
-
-  // const response = await fetch(`${API_URL}services?populate=*`);
-  // const { data } = await response.json();
-
-  // console.log(data);
-
 
   const daysOfMonth = eachDayOfInterval({
     start: startOfMonth(new Date()),
