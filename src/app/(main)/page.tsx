@@ -1,12 +1,13 @@
 import Image from "next/image";
 import Motion from "@/components/motion";
-import LinkButton from "@/components/linkButton";
+import LinkButton from "@/components/link-button";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <main>
       <section
-        className="relative lg:h-screen"
+        className="relative lg:h-screen bg-black"
       >
         <Image
           alt="biblia"
@@ -51,7 +52,7 @@ export default function Home() {
         </p>
       </Motion>
 
-      <section className='bg-slate-100'>
+      <div className='bg-slate-100'>
         <section className='mx-auto max-w-screen-xl px-10 py-20 flex flex-col lg:flex-row gap-10'>
           <div className='flex flex-col flex-1 justify-center text-center gap-10 lg:text-left'>
             <h3 className="text-black title">
@@ -81,42 +82,39 @@ export default function Home() {
             />
           </Motion>
         </section>
-      </section>
+      </div>
 
-      <section>
-        <section className='mx-auto max-w-screen-xl px-10 py-20 flex flex-col-reverse ls:flex-col lg:flex-row gap-10'>
-          <Motion
-            type="div"
-            initial={{ x:-50, opacity: 0 }}
-            whileInView={{ x:0, opacity: 1 }}
-            transition={{ duration: 0.75 }}
-            viewport={{ once: true }}
-            className='flex-1 flex flex-row justify-center lg:justify-start'
-          >
-            <Image 
-              src="/image/cruz.jpeg"
-              alt="me"
-              width={400}
-              height={150}
-              priority={false}
-            />
-          </Motion>
-          <div className='flex flex-col flex-1 justify-center text-center lg:text-left gap-10'>
-            <h3 className="text-black title">
-              Nuestras Actividades
-            </h3>
-            <p className="text-gray-500 text">
-              En nuestra iglesia, creemos que la alabanza es una forma poderosa de expresar nuestra gratitud y amor a Dios. Cada semana, nos reunimos para celebrar y alabar a Dios a través de cánticos, oraciones y reflexiones. Además, organizamos eventos especiales de alabanza, como conciertos de música y servicios de adoración. Todos están invitados a unirse a nosotros en estas actividades y a experimentar la alegría y la paz que viene de alabar a nuestro Señor. ¡Ven y únete a nuestra comunidad de alabanza!
-            </p>
-            <div className='text-center lg:text-left'>
-              <LinkButton link="/servicios" text="Ver Servicios" />
-            </div>
+      <section className='mx-auto max-w-screen-xl px-10 py-20 flex flex-col-reverse ls:flex-col lg:flex-row gap-10'>
+        <Motion
+          type="div"
+          initial={{ x:-50, opacity: 0 }}
+          whileInView={{ x:0, opacity: 1 }}
+          transition={{ duration: 0.75 }}
+          viewport={{ once: true }}
+          className='flex-1 flex flex-row justify-center lg:justify-start'
+        >
+          <Image 
+            src="/image/cruz.jpeg"
+            alt="me"
+            width={400}
+            height={150}
+            priority={false}
+          />
+        </Motion>
+        <div className='flex flex-col flex-1 justify-center text-center lg:text-left gap-10'>
+          <h3 className="text-black title">
+            Nuestras Actividades
+          </h3>
+          <p className="text-gray-500 text">
+            En nuestra iglesia, creemos que la alabanza es una forma poderosa de expresar nuestra gratitud y amor a Dios. Cada semana, nos reunimos para celebrar y alabar a Dios a través de cánticos, oraciones y reflexiones. Además, organizamos eventos especiales de alabanza, como conciertos de música y servicios de adoración. Todos están invitados a unirse a nosotros en estas actividades y a experimentar la alegría y la paz que viene de alabar a nuestro Señor. ¡Ven y únete a nuestra comunidad de alabanza!
+          </p>
+          <div className='text-center lg:text-left'>
+            <LinkButton link="/servicios" text="Ver Servicios" />
           </div>
-        </section>
+        </div>
       </section>
 
-
-      <section className='bg-slate-100'>
+      <div className='bg-slate-100'>
         <section className='mx-auto max-w-screen-xl grid grid-cols-1 gap-y-8 lg:grid-cols-2 lg:items-center lg:gap-x-16 p-10'>
           <div className='flex flex-col gap-5'>
             <h3 className="text-black title text-center lg:text-left">
@@ -141,6 +139,36 @@ export default function Home() {
             <iframe className='w-full shadow-xl rounded-xl' height="315" src="https://www.youtube.com/embed/eVqktyGe_oE" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
           </Motion>
         </section>
+      </div>
+
+      <section className='mx-auto max-w-screen-xl px-10 py-20 flex flex-col-reverse ls:flex-col lg:flex-row gap-10'>
+        <Motion
+          type="div"
+          initial={{ x:-50, opacity: 0 }}
+          whileInView={{ x:0, opacity: 1 }}
+          transition={{ duration: 0.75 }}
+          viewport={{ once: true }}
+          className='flex-1 flex flex-row justify-center lg:justify-start'
+        >
+          <Image 
+            src="/image/thanks.jpg"
+            alt="thanks"
+            width={400}
+            height={150}
+            priority={false}
+          />
+        </Motion>
+        <div className='flex flex-col flex-1 justify-center text-center lg:text-left gap-10'>
+          <h3 className="text-black title">
+            Tu Ofrenda Cuenta
+          </h3>
+          <p className="text-gray-500 text">
+            Los invitamos con gratitud a participar en la ofrenda de diezmos y ofrendas en nuestro sitio de <Link href="https://adventistgiving.org/" target="_blank">adventistgiving.org</Link>. Esta es una oportunidad para demostrar nuestra mayordomía y generosidad, apoyando así la labor pastoral, la ayuda a los necesitados y proyectos de misión. Cada contribución es una inversión en el reino de Dios y un acto de gratitud por Su fidelidad constante en nuestras vidas. Recordemos las palabras de Pablo:  &quot;Cada uno dé como propuso en su corazón: no con tristeza, ni por necesidad, porque Dios ama al dador alegre &quot;. Juntos, como familia de fe, hacemos una diferencia y honramos a Dios.
+          </p>
+          <div className='text-center lg:text-left'>
+            <LinkButton link="https://adventistgiving.org/donate/ANTTBV" text="Dona Aqui" target="_blank" />
+          </div>
+        </div>
       </section>
     </main>
   )

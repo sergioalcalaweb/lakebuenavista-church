@@ -1,6 +1,6 @@
 import { EventApp } from "@/types";
 import { format } from "date-fns";
-import { DayEventItem } from "./dayEventItem";
+import { DayEventItem } from "./day-event-item";
 
 interface MonthlyDayProps {
   day: number | Date;

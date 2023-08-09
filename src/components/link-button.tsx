@@ -2,13 +2,15 @@ import Link from "next/link";
 
 interface LinkButtonProps {
   link: string,
-  text: string
+  text: string,
+  target?: string;
 }
 
-const LinkButton = ({link, text} : LinkButtonProps ) => (
+const LinkButton = ({link, text, target = '_self'} : LinkButtonProps ) => (
   <Link
     className="group relative inline-block w-[250px] text-center overflow-hidden border border-gray-600 px-8 py-3 focus:outline-none focus:ring"
     href={link}
+    target={target}
   >
     <span
       className="absolute inset-y-0 left-0 w-[2px] bg-gray-600 transition-all group-hover:w-full group-active:bg-gray-500"

@@ -1,7 +1,7 @@
 import { eachDayOfInterval, endOfMonth, isSameDay, Locale, startOfMonth } from 'date-fns';
 import { EventApp } from '@/types';
 import { handleOmittedDays } from '@zach.codes/react-calendar';
-import { MonthlyDay } from './monthlyDay';
+import { MonthlyDay } from './monthly-day';
 
 interface MonthlyBodyContext {
   day: Date;
