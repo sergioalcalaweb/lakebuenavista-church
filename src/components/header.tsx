@@ -15,7 +15,7 @@ const Header = () => {
   return (
     <header aria-label="Site Header" className="bg-black sticky top-0 z-40">
       <AnimatePresence>
-        <div className="mx-auto max-w-screen-xl px-6 md:px-3 lg:px-0">
+        <div className="mx-auto max-w-screen-xl px-6 md:px-3 lg:px-5">
           <div className="flex h-16 items-center justify-between">
             <Link
               className="flex-1 flex items-center gap-2"
@@ -25,7 +25,7 @@ const Header = () => {
               <div className="font-thin text-2xl text-white">Lake Buena Vista</div>
             </Link>
             <div className="md:flex md:items-center md:gap-12">
-              <nav aria-label="Site Nav" className="hidden md:flex items-center gap-6">
+              <nav aria-label="Site Nav" className="hidden lg:flex items-center gap-6">
                 <Link
                   className={`text-white h-16 transition leading-[4rem] font-light border-b-2 ${url === '/' ? 'border-white' : 'border-transparent'} hover:border-white`}
                   href="/"
@@ -66,9 +66,16 @@ const Header = () => {
                 >
                   Contacto
                 </Link>
+                <Link
+                  className="text-black bg-white px-5 h-16 transition leading-[4rem] font-light border-2 border-transparent hover:border-black"
+                  href="https://adventistgiving.org/donate/ANTTBV"
+                  target="_blank"
+                >
+                  Donación
+                </Link>
               </nav>
             </div>
-            <div className="md:hidden">
+            <div className="lg:hidden">å
               <button
                 className="p-2 text-white"
                 type="button"
@@ -142,6 +149,13 @@ const Header = () => {
                 href="/contacto"
               >
                 Contacto
+              </Link>
+              <Link
+                className="text-black bg-white px-4 py-3 mb-1"
+                href="https://adventistgiving.org/donate/ANTTBV"
+                target="_blank"
+              >
+                Donación
               </Link>
             </motion.nav>
           )}
