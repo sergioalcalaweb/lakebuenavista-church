@@ -19,5 +19,19 @@ module.exports = {
     },
   },
   darkMode: "class",
-  plugins: [nextui()]
+  plugins: [nextui({
+    themes: {
+      light: {
+        colors: {
+          background:'#F9F9F9',
+          primary: {
+            DEFAULT: '#FFD700'
+          },
+          secondary: {
+            DEFAULT: '#C0C0C0'
+          }
+        }
+      }
+    }
+  })]
 }
