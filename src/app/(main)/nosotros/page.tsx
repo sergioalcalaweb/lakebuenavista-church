@@ -28,7 +28,7 @@ const About = () => {
           />
         )}
       >
-        <article className='py-12 px-14 text-left'>
+        <article className=' py-12 px-14 text-left'>
           <h2 className='title text-center md:text-left'>Acerca de los Adventistas del Séptimo Día</h2>
 
           <p className='text my-4'>

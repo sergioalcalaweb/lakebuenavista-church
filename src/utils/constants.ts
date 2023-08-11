@@ -5,6 +5,11 @@ interface Day {
   label: string | undefined;
 }
 
+interface MenuItem {
+  path: string;
+  name: string;
+}
+
 export const publicUrls: string[] = [
   '/',
   '/nosotros',
@@ -12,6 +17,33 @@ export const publicUrls: string[] = [
   '/predicaciones',
   '/eventos',
   '/contacto'
+];
+
+export const menuItems: MenuItem[] = [
+  {
+    path: '/',
+    name: 'home'
+  },
+  {
+    path: '/nosotros',
+    name: 'nosotros'
+  },
+  {
+    path: '/servicios',
+    name: 'servicios'
+  },
+  {
+    path: '/predicaciones',
+    name: 'predicaciones'
+  },
+  {
+    path: '/eventos',
+    name: 'eventos'
+  },
+  {
+    path: '/contacto',
+    name: 'contacto'
+  },
 ];
 
 export const daysInWeek = ({ locale = enUS } : { locale: Locale}) : Day[] => [
