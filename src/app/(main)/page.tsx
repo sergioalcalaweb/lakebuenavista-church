@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main>
+    <>
       <section
         className="relative lg:h-screen bg-black"
       >
@@ -36,21 +36,24 @@ export default function Home() {
           </h2>
         </Motion>
       </section>
-      <Motion
-        type="section"
-        initial={{ x:25, opacity: 0 }}
-        whileInView={{ x:0, opacity: 1 }}
-        transition={{ duration: 0.75 }}
-        viewport={{ once: true }}
-        className='relative mx-auto max-w-screen-xl px-10 py-20 lg:px-20 lg:py-24 flex flex-col gap-10 text-center'
-      >
-        <h3 className="text-black title">
-          Bienvenido a Lake Buena Vista Spanish SDA
-        </h3>
-        <p className="text-gray-500 text">
-          Lake Buena Vista, fundada hace más de 10 años por nuestro pastor <strong>Abel Morrobel</strong>. Desde entonces, el pastor Morrobel ha estado liderando nuestra iglesia y guiándonos en nuestro camino espiritual. Nos enfocamos en vivir y compartir los valores tales como el amor, la fe, la esperanza y la humildad. Nos esforzamos por seguir a Jesús y crecer juntos en nuestra fe. Esperamos que encuentres paz, consuelo y comunidad aquí entre nosotros. ¡Te esperamos!
-        </p>
-      </Motion>
+
+      <div className='bg-white'>
+        <Motion
+          type="section"
+          initial={{ x:25, opacity: 0 }}
+          whileInView={{ x:0, opacity: 1 }}
+          transition={{ duration: 0.75 }}
+          viewport={{ once: true }}
+          className='relative mx-auto max-w-screen-xl px-10 py-20 lg:px-20 lg:py-24 flex flex-col gap-10 text-center'
+        >
+          <h3 className="text-black title">
+            Bienvenido a Lake Buena Vista Spanish SDA
+          </h3>
+          <p className="text-gray-500 text">
+            Lake Buena Vista, fundada hace más de 10 años por nuestro pastor <strong>Abel Morrobel</strong>. Desde entonces, el pastor Morrobel ha estado liderando nuestra iglesia y guiándonos en nuestro camino espiritual. Nos enfocamos en vivir y compartir los valores tales como el amor, la fe, la esperanza y la humildad. Nos esforzamos por seguir a Jesús y crecer juntos en nuestra fe. Esperamos que encuentres paz, consuelo y comunidad aquí entre nosotros. ¡Te esperamos!
+          </p>
+        </Motion>
+      </div>
 
       <div className='bg-slate-100'>
         <section className='mx-auto max-w-screen-xl px-10 py-20 flex flex-col lg:flex-row gap-10'>
@@ -83,36 +86,38 @@ export default function Home() {
           </Motion>
         </section>
       </div>
-
-      <section className='mx-auto max-w-screen-xl px-10 py-20 flex flex-col-reverse ls:flex-col lg:flex-row gap-10'>
-        <Motion
-          type="div"
-          initial={{ x:-50, opacity: 0 }}
-          whileInView={{ x:0, opacity: 1 }}
-          transition={{ duration: 0.75 }}
-          viewport={{ once: true }}
-          className='flex-1 flex flex-row justify-center lg:justify-start'
-        >
-          <Image 
-            src="/image/cruz.jpeg"
-            alt="me"
-            width={400}
-            height={150}
-            priority={false}
-          />
-        </Motion>
-        <div className='flex flex-col flex-1 justify-center text-center lg:text-left gap-10'>
-          <h3 className="text-black title">
-            Nuestras Actividades
-          </h3>
-          <p className="text-gray-500 text">
-            En nuestra iglesia, creemos que la alabanza es una forma poderosa de expresar nuestra gratitud y amor a Dios. Cada semana, nos reunimos para celebrar y alabar a Dios a través de cánticos, oraciones y reflexiones. Además, organizamos eventos especiales de alabanza, como conciertos de música y servicios de adoración. Todos están invitados a unirse a nosotros en estas actividades y a experimentar la alegría y la paz que viene de alabar a nuestro Señor. ¡Ven y únete a nuestra comunidad de alabanza!
-          </p>
-          <div className='text-center lg:text-left'>
-            <LinkButton link="/servicios" text="Ver Servicios" />
+      
+      <div className='bg-white'>
+        <section className='mx-auto max-w-screen-xl px-10 py-20 flex flex-col-reverse ls:flex-col lg:flex-row gap-10'>
+          <Motion
+            type="div"
+            initial={{ x:-50, opacity: 0 }}
+            whileInView={{ x:0, opacity: 1 }}
+            transition={{ duration: 0.75 }}
+            viewport={{ once: true }}
+            className='flex-1 flex flex-row justify-center lg:justify-start'
+          >
+            <Image 
+              src="/image/cruz.jpeg"
+              alt="me"
+              width={400}
+              height={150}
+              priority={false}
+            />
+          </Motion>
+          <div className='flex flex-col flex-1 justify-center text-center lg:text-left gap-10'>
+            <h3 className="text-black title">
+              Nuestras Actividades
+            </h3>
+            <p className="text-gray-500 text">
+              En nuestra iglesia, creemos que la alabanza es una forma poderosa de expresar nuestra gratitud y amor a Dios. Cada semana, nos reunimos para celebrar y alabar a Dios a través de cánticos, oraciones y reflexiones. Además, organizamos eventos especiales de alabanza, como conciertos de música y servicios de adoración. Todos están invitados a unirse a nosotros en estas actividades y a experimentar la alegría y la paz que viene de alabar a nuestro Señor. ¡Ven y únete a nuestra comunidad de alabanza!
+            </p>
+            <div className='text-center lg:text-left'>
+              <LinkButton link="/servicios" text="Ver Servicios" />
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
       <div className='bg-slate-100'>
         <section className='mx-auto max-w-screen-xl grid grid-cols-1 gap-y-8 lg:grid-cols-2 lg:items-center lg:gap-x-16 p-10'>
@@ -140,36 +145,38 @@ export default function Home() {
           </Motion>
         </section>
       </div>
-
-      <section className='mx-auto max-w-screen-xl px-10 py-20 flex flex-col-reverse ls:flex-col lg:flex-row gap-10'>
-        <Motion
-          type="div"
-          initial={{ x:-50, opacity: 0 }}
-          whileInView={{ x:0, opacity: 1 }}
-          transition={{ duration: 0.75 }}
-          viewport={{ once: true }}
-          className='flex-1 flex flex-row justify-center lg:justify-start'
-        >
-          <Image 
-            src="/image/thanks.jpg"
-            alt="thanks"
-            width={400}
-            height={150}
-            priority={false}
-          />
-        </Motion>
-        <div className='flex flex-col flex-1 justify-center text-center lg:text-left gap-10'>
-          <h3 className="text-black title">
-            Tu Ofrenda Cuenta
-          </h3>
-          <p className="text-gray-500 text">
-            Los invitamos con gratitud a participar en la ofrenda de diezmos y ofrendas en nuestro sitio de <Link href="https://adventistgiving.org/" target="_blank">adventistgiving.org</Link>. Esta es una oportunidad para demostrar nuestra mayordomía y generosidad, apoyando así la labor pastoral, la ayuda a los necesitados y proyectos de misión. Cada contribución es una inversión en el reino de Dios y un acto de gratitud por Su fidelidad constante en nuestras vidas. Recordemos las palabras de Pablo:  &quot;Cada uno dé como propuso en su corazón: no con tristeza, ni por necesidad, porque Dios ama al dador alegre &quot;. Juntos, como familia de fe, hacemos una diferencia y honramos a Dios.
-          </p>
-          <div className='text-center lg:text-left'>
-            <LinkButton link="https://adventistgiving.org/donate/ANTTBV" text="Dona Aqui" target="_blank" />
+      
+      <div className='bg-white'>
+        <section className='mx-auto max-w-screen-xl px-10 py-20 flex flex-col-reverse ls:flex-col lg:flex-row gap-10'>
+          <Motion
+            type="div"
+            initial={{ x:-50, opacity: 0 }}
+            whileInView={{ x:0, opacity: 1 }}
+            transition={{ duration: 0.75 }}
+            viewport={{ once: true }}
+            className='flex-1 flex flex-row justify-center lg:justify-start'
+          >
+            <Image 
+              src="/image/thanks.jpg"
+              alt="thanks"
+              width={400}
+              height={150}
+              priority={false}
+            />
+          </Motion>
+          <div className='flex flex-col flex-1 justify-center text-center lg:text-left gap-10'>
+            <h3 className="text-black title">
+              Tu Ofrenda Cuenta
+            </h3>
+            <p className="text-gray-500 text">
+              Los invitamos con gratitud a participar en la ofrenda de diezmos y ofrendas en nuestro sitio de <Link href="https://adventistgiving.org/" target="_blank">adventistgiving.org</Link>. Esta es una oportunidad para demostrar nuestra mayordomía y generosidad, apoyando así la labor pastoral, la ayuda a los necesitados y proyectos de misión. Cada contribución es una inversión en el reino de Dios y un acto de gratitud por Su fidelidad constante en nuestras vidas. Recordemos las palabras de Pablo:  &quot;Cada uno dé como propuso en su corazón: no con tristeza, ni por necesidad, porque Dios ama al dador alegre &quot;. Juntos, como familia de fe, hacemos una diferencia y honramos a Dios.
+            </p>
+            <div className='text-center lg:text-left'>
+              <LinkButton link="https://adventistgiving.org/donate/ANTTBV" text="Dona Aqui" target="_blank" />
+            </div>
           </div>
-        </div>
-      </section>
-    </main>
+        </section>
+      </div>
+    </>
   )
 }
