@@ -68,14 +68,14 @@ export function MonthlyBody({
             <span className="sr-only">No Events</span>
           </div>
         ))}
-        {daysToRender.map(day => (
+        {/* {daysToRender.map(day => (
           <MonthlyDay
             key={day.toISOString()} 
             day={day} 
             locale={locale} 
             events={events.filter(data => isSameDay(data.date, day))}
           />
-        ))}
+        ))} */}
       </div>
     </div>
   );
