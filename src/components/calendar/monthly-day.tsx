@@ -27,18 +27,12 @@ export function MonthlyDay({ day, locale, events } : MonthlyDayProps) {
         {events.map((item, index) => {
           const date = format(item.date, 'KK:mm a');
           return (
-            // <DayEventItem
-            //   key={index}
-            //   title={item.title}
-            //   date={format(item.date, 'KK:mm a')}
-            //   link={item.link}
-            // />
-            <li className="py-2" key={index}>
-              <h3 className='font-normal'>{item.title}</h3>
-              <div className='flex justify-between items-center mt-4'>
-                <p className="text-gray-900">{date}</p>
-              </div>
-            </li>
+            <DayEventItem
+              key={index}
+              title={item.title}
+              date={date}
+              link={item.link}
+            />
           )
         })}
       </ul>
