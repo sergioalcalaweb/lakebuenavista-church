@@ -1,10 +1,8 @@
 import Calendar from "@/components/calendar/calendar";
 import SectionName from "@/components/section-name";
-import { getEvents } from "@/utils/events";
 import Image from "next/image";
 
-const Events = async () => {
-  const events = await getEvents();
+const Events = () => {
   return (
     <SectionName
         name="Eventos"
@@ -25,7 +23,7 @@ const Events = async () => {
         )}
       >
         <div className="pt-5">
-          <Calendar events={events} />
+          <Calendar />
         </div>
       </SectionName>
   );

@@ -4,14 +4,9 @@ import { daysInWeek } from "@/utils/constants";
 
 export const getEvents = async () => {
 
-  const fechaActual = new Date();
-  const opciones = { timeZone: 'America/New_York' };
-
-  const fechaEST = fechaActual.toLocaleString('en-US', opciones);
-
   const daysOfMonth = eachDayOfInterval({
-    start: startOfMonth(new Date(fechaEST)),
-    end: lastDayOfMonth(new Date(fechaEST))
+    start: startOfMonth(new Date()),
+    end: lastDayOfMonth(new Date())
   });
 
   let saturday = 1;

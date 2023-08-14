@@ -5,9 +5,19 @@ import { MonthlyBody } from './monthly-body';
 import { EventApp } from '@/types';
 import { MonthlyNav } from './monthly-nav';
 import { startOfMonth } from 'date-fns';
+import { useEffect, useState } from 'react';
+import { getEvents } from '@/utils/events';
 
-export default function Calendar({ events }: { events: EventApp[] }) {
+export default function Calendar() {
   const currentMonth = startOfMonth(new Date());
+  const [events, setEvents] = useState<EventApp[]>([]);
+  useEffect(() => {
+    const getEventsFromServer = async () => {
+      const eventsResp = await getEvents();
+      setEvents(eventsResp);
+    }
+    getEventsFromServer();
+  }, [])
 
   if(!events) return null;
 

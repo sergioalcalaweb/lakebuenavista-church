@@ -1,5 +1,6 @@
 'use client';
 
+import { parseISO } from 'date-fns';
 import Link from 'next/link';
 import React from 'react';
 
@@ -14,6 +15,8 @@ export const DayEventItem = ({
   date,
   link,
 }: DayEventItemProps) => {
+  
+  // const dateParse = parseISO(date);
   return (
     <li className="py-2">
       <Link 
@@ -22,7 +25,7 @@ export const DayEventItem = ({
       >
         <h3 className='font-normal'>{title}</h3>
         <div className='flex justify-between items-center mt-4'>
-          <p className="text-gray-900">{date}</p>
+          <p className="text-gray-900" suppressHydrationWarning>{date}</p>
         </div>
       </Link>
     </li>
