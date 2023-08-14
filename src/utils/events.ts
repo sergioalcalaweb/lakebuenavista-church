@@ -1,19 +1,17 @@
 import { EventApp } from "@/types";
 import { eachDayOfInterval, getDay, isSaturday, isThursday, isWednesday, lastDayOfMonth, startOfMonth } from "date-fns";
 import { daysInWeek } from "@/utils/constants";
-// import { API_URL } from "@/config";
 
 export const getEvents = async () => {
 
-  // const response = await fetch(`${API_URL}services?populate=*`);
-  // const { data } = await response.json();
+  const fechaActual = new Date();
+  const opciones = { timeZone: 'America/New_York' };
 
-  // console.log(data);
-
+  const fechaEST = fechaActual.toLocaleString('en-US', opciones);
 
   const daysOfMonth = eachDayOfInterval({
-    start: startOfMonth(new Date()),
-    end: lastDayOfMonth(new Date())
+    start: startOfMonth(new Date(fechaEST)),
+    end: lastDayOfMonth(new Date(fechaEST))
   });
 
   let saturday = 1;
