@@ -19,7 +19,7 @@ export const getEvents = async () => {
       ];
 
       if (saturday === 1 || saturday === 3) {
-        dayEvents.push({ title: 'Sociedad De Jovenes', date: day.setHours(15, 0), link: '/servicios'  });
+        dayEvents.push({ title: 'Sociedad De Jovenes', date: day.setHours(14, 30), link: '/servicios'  });
       }
 
       saturday++;
@@ -28,13 +28,13 @@ export const getEvents = async () => {
     }
     if(isWednesday(day)) {
       const dayEvents = [
-        { title: 'Servicio de Oracion', date: day.setHours(19, 0), link: '/servicios'  },
+        { title: 'Servicio de Oracion', date: day.setHours(19, 30), link: '/servicios'  },
       ];
       events.push(...dayEvents);
     }
     if(isThursday(day)) {
       const dayEvents = [
-        { title: 'Banco de alimentos', date: day.setHours(14, 0), link: '/servicios'  },
+        { title: 'Banco de alimentos', date: day.setHours(15, 0), link: '/servicios'  },
       ];
       events.push(...dayEvents);
     }

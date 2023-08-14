@@ -42,7 +42,7 @@ export function MonthlyBody({
 
 
   let headingClassName =
-    'border-black border-b-2 p-2 lg:block hidden capitalize font-thin text-2xl';
+    'border-black border-b-2 p-2 lg:block hidden capitalize font-thin text-xl';
   return (
     <div className="bg-white border-black">
       <div
