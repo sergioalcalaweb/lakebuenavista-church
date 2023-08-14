@@ -26,16 +26,13 @@ export function MonthlyDay({ day, locale, events } : MonthlyDayProps) {
       <ul className="divide-gray-200 pb-5 divide-y md:overflow-hidden md:max-h-72 md:overflow-y-auto">
         {events.map((item, index) => {
           return (
-            // <DayEventItem
-            //   key={index}
-            //   title={item.title}
-            //   // Format the date here to be in the format you prefer
-            //   date={format(item.date, 'KK:mm a')}
-            //   link={item.link}
-            // />
-            <li key={index}>
-              {item.title}
-            </li>
+            <DayEventItem
+              key={index}
+              title={item.title}
+              // Format the date here to be in the format you prefer
+              date={format(item.date, 'KK:mm a')}
+              link={item.link}
+            />
           )
         })}
       </ul>
