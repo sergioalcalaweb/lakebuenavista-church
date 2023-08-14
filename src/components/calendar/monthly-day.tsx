@@ -26,6 +26,7 @@ export function MonthlyDay({ day, locale, events } : MonthlyDayProps) {
       <ul className="divide-gray-200 pb-5 divide-y md:overflow-hidden md:max-h-72 md:overflow-y-auto">
         {events.map((item, index) => {
           const date = format(item.date, 'KK:mm a');
+          console.log(date);
           return (
             <DayEventItem
               key={index}
