@@ -34,9 +34,9 @@ export function MonthlyDay({ day, locale, events } : MonthlyDayProps) {
             // />
             <li className="py-2" key={index}>
               <h3 className='font-normal'>{item.title}</h3>
-              <div className='flex justify-between items-center mt-4'>
+              {/* <div className='flex justify-between items-center mt-4'>
                 <p className="text-gray-900">{format(item.date, 'KK:mm a')}</p>
-              </div>
+              </div> */}
             </li>
           )
         })}
