@@ -1,4 +1,4 @@
-import Section from "@/components/section";
+import SectionName from "@/components/section-name";
 import Image from "next/image";
 import type { Metadata } from "next";
 
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 const About = () => {
   return ( 
-    <Section
+    <SectionName
         name="Nosotros"
         image={(
           <Image
@@ -48,7 +48,7 @@ const About = () => {
           </p>
         </article>
 
-      </Section>
+      </SectionName>
   );
 }
  

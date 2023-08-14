@@ -1,5 +1,5 @@
 
-import Section from '@/components/section';
+import SectionName from '@/components/section-name';
 import VideoLoading from '@/components/video-loading';
 import YoutubeCard from '@/components/youtube-card';
 import { getChannelInfo } from '@/utils/youtube';
@@ -10,7 +10,7 @@ import { Suspense } from 'react';
 const Predicaciones = async () => {
   const { videos, conference, concerts } = await getChannelInfo();
   return (
-    <Section
+    <SectionName
       name="Predicaciones"
       image={(
         <Image
@@ -44,7 +44,7 @@ const Predicaciones = async () => {
           </div>
         </Suspense>
       </article>
-    </Section>
+    </SectionName>
   );
 }
  

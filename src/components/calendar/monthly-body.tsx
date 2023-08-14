@@ -1,3 +1,5 @@
+'use client';
+
 import { eachDayOfInterval, endOfMonth, isSameDay, Locale, startOfMonth } from 'date-fns';
 import { EventApp } from '@/types';
 import { handleOmittedDays } from '@zach.codes/react-calendar';

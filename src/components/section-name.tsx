@@ -7,7 +7,7 @@ interface SectionProps {
 }
 
 
-const Section = ({ name, image, children }: SectionProps) => (
+const SectionName = ({ name, image, children }: SectionProps) => (
   <div className="bg-white">
     <div className='relative w-screen-xl h-56 lg:h-96 bg-gradient-to-b from-black to-slate-700'>
       {image}
@@ -23,7 +23,6 @@ const Section = ({ name, image, children }: SectionProps) => (
       {children}
     </div>
   </div>
-
 )
  
-export default Section;
+export default SectionName;

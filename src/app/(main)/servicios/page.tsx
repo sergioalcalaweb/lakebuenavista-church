@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Section from '@/components/section';
+import SectionName from '@/components/section-name';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 const Services = () => {
   return (
-      <Section
+      <SectionName
         name="Servicios"
         image={(
           <Image
@@ -135,7 +135,7 @@ const Services = () => {
           
         </section>
 
-      </Section>
+      </SectionName>
   );
 }
  
