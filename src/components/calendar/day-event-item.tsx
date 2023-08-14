@@ -16,7 +16,7 @@ export const DayEventItem = ({
 }: DayEventItemProps) => {
   return (
     <li className="py-2">
-      {title}
+      {title} | {date}
       {/* <Link 
         href={link}
         className="flex font-thin flex-1 flex-col text-lg md:text-sm transition-all hover:bg-slate-200"
