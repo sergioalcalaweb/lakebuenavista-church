@@ -17,7 +17,11 @@ model Post {
   content   String?
   published Boolean  @default(false)
   author    String?
+<<<<<<< HEAD
   userID    Int
+=======
+  authorId  Int
+>>>>>>> 5a99cd3 (add MySQL and prisma ORM)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
@@ -33,6 +37,7 @@ model Service {
   slug        String   @unique
   active      Boolean  @default(true)
   author      String?
+<<<<<<< HEAD
   userID      Int
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
@@ -55,3 +60,9 @@ enum EventType {
   SINGLE_DAY
   SPECIFIC_DURATION
 }
+=======
+  authorId    Int
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+>>>>>>> 5a99cd3 (add MySQL and prisma ORM)
