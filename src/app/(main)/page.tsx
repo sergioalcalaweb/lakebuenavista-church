@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Motion from "@/components/motion";
-import LinkButton from "@/components/link-button";
+import Motion from "@/components/site/motion";
+import LinkButton from "@/components/site/link-button";
 import Link from "next/link";
 
 export default function Home() {

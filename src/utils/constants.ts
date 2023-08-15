@@ -46,6 +46,21 @@ export const menuItems: MenuItem[] = [
   },
 ];
 
+export const dashboarItems: MenuItem[] = [
+  {
+    path: '/',
+    name: 'home'
+  },
+  {
+    path: '/servicios',
+    name: 'servicios'
+  },
+  {
+    path: '/eventos',
+    name: 'eventos'
+  },
+];
+
 export const daysInWeek = ({ locale = enUS } : { locale: Locale}) : Day[] => [
   { day: 0, label: locale.localize?.day(0) },
   { day: 1, label: locale.localize?.day(1) },

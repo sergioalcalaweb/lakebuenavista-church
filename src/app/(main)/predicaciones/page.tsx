@@ -1,7 +1,7 @@
 
-import SectionName from '@/components/section-name';
-import VideoLoading from '@/components/video-loading';
-import YoutubeCard from '@/components/youtube-card';
+import SectionName from "@/components/site/section-name";
+import VideoLoading from '@/components/site/video-loading';
+import YoutubeCard from '@/components/site/youtube-card';
 import { getChannelInfo } from '@/utils/youtube';
 import Image from 'next/image';
 import { Suspense } from 'react';

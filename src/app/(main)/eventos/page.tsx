@@ -1,5 +1,6 @@
-import Calendar from "@/components/calendar/calendar";
-import SectionName from "@/components/section-name";
+import Calendar from "@/components/site/calendar/calendar";
+import SectionName from "@/components/site/section-name";
+
 import Image from "next/image";
 
 const Events = () => {
