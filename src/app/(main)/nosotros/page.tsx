@@ -1,4 +1,4 @@
-import SectionName from "@/components/section-name";
+import SectionName from "@/components/site/section-name";
 import Image from "next/image";
 import type { Metadata } from "next";
 

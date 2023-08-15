@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion, useCycle } from 'framer-motion';
-import Logo from "./logo";
+import Logo from "../logo";
 import { useState } from "react";
 
 
