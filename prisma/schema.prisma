@@ -17,7 +17,7 @@ model Post {
   content   String?
   published Boolean  @default(false)
   author    String?
-  authorId  Int
+  userID    Int
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
@@ -33,7 +33,25 @@ model Service {
   slug        String   @unique
   active      Boolean  @default(true)
   author      String?
-  authorId    Int
+  userID      Int
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+}
+
+model Event {
+  id          Int       @id @default(autoincrement())
+  title       String
+  description String
+  type        EventType
+  startDate   DateTime
+  endDate     DateTime?
+  location    String
+  userID      Int
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+enum EventType {
+  SINGLE_DAY
+  SPECIFIC_DURATION
 }
