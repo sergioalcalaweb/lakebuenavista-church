@@ -48,15 +48,15 @@ export const menuItems: MenuItem[] = [
 
 export const dashboarItems: MenuItem[] = [
   {
-    path: '/',
+    path: '/dashboard',
     name: 'home'
   },
   {
-    path: '/servicios',
+    path: '/dashboard/services',
     name: 'servicios'
   },
   {
-    path: '/eventos',
+    path: '/dashboard/events',
     name: 'eventos'
   },
 ];
