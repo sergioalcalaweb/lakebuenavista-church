@@ -3,7 +3,7 @@ import Motion from "@/components/site/motion";
 import LinkButton from "@/components/site/link-button";
 import Link from "next/link";
 
-export default function Home() {
+const HomePAge = () => {
   return (
     <>
       <section
@@ -183,3 +183,5 @@ export default function Home() {
     </>
   )
 }
+
+export default HomePAge;

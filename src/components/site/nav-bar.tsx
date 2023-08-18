@@ -13,6 +13,7 @@ export default function NavBar() {
   return (
     <Navbar 
       maxWidth="xl"
+      className="backdrop-blur-sm bg-black/50"
       onMenuOpenChange={setIsMenuOpen}
     >
       <NavbarContent>

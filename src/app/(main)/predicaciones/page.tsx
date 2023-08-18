@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { Suspense } from 'react';
 
 
-const Predicaciones = async () => {
+const PredictionPage = async () => {
   const { videos, conference, concerts } = await getChannelInfo();
   return (
     <SectionName
@@ -48,4 +48,4 @@ const Predicaciones = async () => {
   );
 }
  
-export default Predicaciones;
+export default PredictionPage;

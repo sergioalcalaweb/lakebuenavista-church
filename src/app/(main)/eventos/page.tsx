@@ -3,7 +3,7 @@ import SectionName from "@/components/site/section-name";
 
 import Image from "next/image";
 
-const Events = () => {
+const EventPage = () => {
   return (
     <SectionName
         name="Eventos"
@@ -30,4 +30,4 @@ const Events = () => {
   );
 }
  
-export default Events;
+export default EventPage;

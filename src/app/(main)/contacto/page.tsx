@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "Queremos estar allí para ustedes",
 }
 
-const Contact = () => {
+const ContactPage = () => {
   return (
     <SectionName
         name="Contacto"
@@ -83,4 +83,4 @@ const Contact = () => {
   );
 }
  
-export default Contact;
+export default ContactPage;

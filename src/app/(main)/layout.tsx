@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import { siteConfig } from '@/config/site'
-import Header from '@/components/site//header'
 import Footer from '@/components/site//footer'
 import NavBar from '@/components/site//nav-bar'
 

@@ -1,10 +1,11 @@
-import { UserButton } from "@clerk/nextjs";
 
+const DashboardPage = async () => {
 
-export default function DashboardPage() {
   return (
     <main>
       Dashboard
     </main>
   )
 }
+
+export default DashboardPage;

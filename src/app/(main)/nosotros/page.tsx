@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 }
 
 
-const About = () => {
+const AboutPage = () => {
   return ( 
     <SectionName
         name="Nosotros"
@@ -106,4 +106,4 @@ const About = () => {
   );
 }
  
-export default About;
+export default AboutPage;
