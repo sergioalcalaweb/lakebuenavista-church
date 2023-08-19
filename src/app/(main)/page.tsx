@@ -44,7 +44,7 @@ export default function Home() {
           whileInView={{ x:0, opacity: 1 }}
           transition={{ duration: 0.75 }}
           viewport={{ once: true }}
-          className='relative mx-auto max-w-screen-xl px-7 lg:px-20 py-20 lg:py-24 flex flex-col gap-10'
+          className='relative mx-auto max-w-screen-xl px-10 py-20 lg:py-24 flex flex-col gap-10'
         >
           <h3 className="text-black title">
             Bienvenido a Lake Buena Vista Spanish SDA
