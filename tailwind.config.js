@@ -36,13 +36,15 @@ module.exports = {
         colors: {
           background: '#1E1E1E',
           content1: '#454545',
-          foreground: '#dcdcdc',
           primary: {
-            foreground: '#8f7806',
+            foreground: '#000',
             DEFAULT: '#FFD700'
           },
           secondary: {
             DEFAULT: '#c49216'
+          },
+          default: {
+            DEFAULT:'#929292'
           },
           warning: {
             DEFAULT: '#DBD40D'
