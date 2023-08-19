@@ -44,7 +44,7 @@ export function MonthlyBody({
   let headingClassName =
     'border-black border-b-2 p-2 lg:block hidden capitalize font-thin text-xl';
   return (
-    <div className="bg-white border-black">
+    <div className="bg-white border-black p-2">
       <div
         className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-1 ${
           headingClasses[`l${headings.length}`]

@@ -18,7 +18,7 @@ export default function NavBar() {
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          className="sm:hidden dark:text-white text-black"
+          className="lg:hidden dark:text-white text-black"
         />
         <NavbarBrand>
           <Link href="/" className="flex gap-2 dark:text-white text-black">
@@ -28,7 +28,7 @@ export default function NavBar() {
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex gap-1" justify="end">
+      <NavbarContent className="hidden lg:flex gap-1" justify="end">
         {menuItems.map((item) => (
           <NavbarItem
             key={item.path}

@@ -30,8 +30,8 @@ const Services = () => {
         <section
           className="overflow-hidden sm:grid sm:grid-cols-2 sm:items-center mb-10 md:mb-0"
         >
-          <div className="px-10 py-10 md:p-12 lg:px-16 lg:py-24">
-            <div className="mx-auto max-w-xl text-center sm:text-left">
+          <div className="px-7 md:px-14 py-10 lg:py-24">
+            <div className="mx-auto max-w-xl">
               <h2 className="title">
                 Servicio de Adoración
               </h2>
@@ -49,7 +49,7 @@ const Services = () => {
           </div>
 
           <Image
-            src='/image/culto.jpg'
+            src='/image/adoracion1.jpeg'
             alt='adoracion'
             width={500}
             height={500}
@@ -61,8 +61,8 @@ const Services = () => {
         <section
           className="overflow-hidden sm:grid sm:grid-cols-2 sm:items-center mb-10 md:mb-0"
         >
-          <div className="px-10 py-10 md:p-12 lg:px-16 lg:py-24">
-            <div className="mx-auto max-w-xl text-center sm:text-left">
+          <div className="px-7 md:px-14 py-10 lg:py-24">
+            <div className="mx-auto max-w-xl">
               <h2 className="title">
                 Escuela Sabática
               </h2>
@@ -74,7 +74,7 @@ const Services = () => {
           </div>
 
           <Image
-            src='/image/escuela2.jpg'
+            src='/image/escuela2.jpeg'
             alt='adoracion'
             width={500}
             height={500}
@@ -86,8 +86,8 @@ const Services = () => {
         <section
           className="overflow-hidden sm:grid sm:grid-cols-2 sm:items-center mb-10 md:mb-0"
         >
-          <div className="px-10 py-10 md:p-12 lg:px-16 lg:py-24">
-            <div className="mx-auto max-w-xl text-center sm:text-left">
+          <div className="px-7 md:px-14 py-10 lg:py-24">
+            <div className="mx-auto max-w-xl">
               <h2 className="title">
                 Sociedad de Jovenes
               </h2>
@@ -102,7 +102,7 @@ const Services = () => {
           </div>
 
           <Image
-            src='/image/escuela.jpg'
+            src='/image/jovenes.jpeg'
             alt='adoracion'
             width={500}
             height={500}
@@ -112,10 +112,10 @@ const Services = () => {
         </section>
 
         <section
-          className="overflow-hidden sm:grid sm:grid-cols-2 sm:items-center mb-10 md:mb-0"
+          className="overflow-hidden sm:grid sm:grid-cols-2 sm:items-center items-start mb-10 md:mb-0"
         >
-          <div className="px-10 py-10 md:p-12 lg:px-16 lg:py-24">
-            <div className="mx-auto max-w-xl text-center sm:text-left">
+          <div className="px-7 md:px-14 py-10 lg:py-24">
+            <div className="mx-auto max-w-xl">
               <h2 className="title">
                 Banco de alimentos
               </h2>
@@ -126,11 +126,11 @@ const Services = () => {
           </div>
 
           <Image
-            src='/image/comida.jpg'
+            src='/image/alimentos.jpg'
             alt='adoracion'
             width={500}
             height={500}
-            className="h-full w-full object-cover sm:h-[calc(100%_-_2rem)] sm:self-end sm:rounded-tl-[30px] md:h-[calc(100%_-_4rem)] md:rounded-tl-[60px]"
+            className="h-full w-full object-cover sm:h-[calc(100%_-_5rem)] sm:self-end sm:rounded-tl-[30px] md:h-[calc(100%_-_10rem)] md:rounded-tl-[60px]"
           />
           
         </section>
