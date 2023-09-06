@@ -70,3 +70,21 @@ export const daysInWeek = ({ locale = enUS } : { locale: Locale}) : Day[] => [
   { day: 5, label: locale.localize?.day(5) },
   { day: 6, label: locale.localize?.day(6) },
 ];
+
+export const daysOfWeek = [
+  {value: 'MONDAY', label:'Monday'},
+  {value: 'TUESDAY', label:'Tuesday'},
+  {value: 'WEDNESDAY', label:'Wednesday'},
+  {value: 'THURSDAY', label:'Thursday'},
+  {value: 'FRIDAY', label:'Friday'},
+  {value: 'SATURDAY', label:'Saturday'},
+  {value: 'SUNDAY', label:'Sunday'},
+]
+
+export const frequency = [
+  {value: 'once', label:'Once a month'},
+  {value: 'every_week', label:'Every week of the month'},
+  {value: 'first_last', label:'First and Last of the month'},
+  {value: 'first_second', label:'First and second of the month'},
+  {value: 'first_third', label:'First and Third of the month'},
+]

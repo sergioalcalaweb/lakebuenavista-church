@@ -13,6 +13,7 @@ const nextConfig = {
       'https://i.ytimg.com',
       'yt3.ggpht.com',
       'i.ytimg.com',
+      'res.cloudinary.com'
     ]
   }
 }

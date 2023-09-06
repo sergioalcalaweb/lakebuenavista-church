@@ -13,7 +13,7 @@ const ServiceItemPage = async (
   })
 
   return (
-    <ServiceForm />
+    <ServiceForm initialData={service || undefined} />
   );
 }
  

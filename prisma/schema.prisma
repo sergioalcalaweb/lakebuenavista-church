@@ -17,30 +17,25 @@ model Post {
   content   String?
   published Boolean  @default(false)
   author    String?
-<<<<<<< HEAD
   userID    Int
-=======
-  authorId  Int
->>>>>>> 5a99cd3 (add MySQL and prisma ORM)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
 
 model Service {
-  id          String   @id @default(uuid())
+  id          String     @id @default(uuid())
   title       String
   header      String?
-  dayWeek     String
+  dayWeek     DaysInWeek
   time        String
   frequency   String
   description String?
-  slug        String   @unique
-  active      Boolean  @default(true)
+  slug        String     @unique
+  active      Boolean    @default(true)
   author      String?
-<<<<<<< HEAD
   userID      Int
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
 }
 
 model Event {
@@ -60,9 +55,13 @@ enum EventType {
   SINGLE_DAY
   SPECIFIC_DURATION
 }
-=======
-  authorId    Int
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+
+enum DaysInWeek {
+  MONDAY
+  TUESDAY
+  WEDNESDAY
+  THURSDAY
+  FRIDAY
+  SATURDAY
+  SUNDAY
 }
->>>>>>> 5a99cd3 (add MySQL and prisma ORM)
