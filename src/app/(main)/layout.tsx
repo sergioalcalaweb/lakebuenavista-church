@@ -1,17 +1,16 @@
-import type { Metadata } from 'next'
-import { siteConfig } from '@/config/site'
-import Header from '@/components/header'
-import Footer from '@/components/footer'
-import NavBar from '@/components/nav-bar'
+import type { Metadata, Viewport } from "next"
+import { siteConfig } from "@/config/site"
+import Footer from "@/components/footer"
+import NavBar from "@/components/nav-bar"
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: {
     default: siteConfig.title,
     template: `%s - ${siteConfig.title}`,
   },
   description: siteConfig.description,
   keywords: siteConfig.keywords,
-  themeColor: '#000',
   authors: [
     {
       name: "Sergio Alcala",
@@ -35,17 +34,19 @@ export const metadata: Metadata = {
   },
 }
 
+export const viewport: Viewport = {
+  themeColor: "black",
+}
+
 export default function MainLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   return (
-    <div >
+    <div>
       <NavBar />
-      <main className='bg-white'>
-        {children}
-      </main>
+      <main className="bg-white">{children}</main>
       <Footer />
     </div>
   )

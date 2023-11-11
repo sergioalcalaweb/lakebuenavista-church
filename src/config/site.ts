@@ -4,7 +4,7 @@ export const siteConfig = {
   title: "Lake Buena Vista - Iglesia Adventista del Séptimo Día en Orlando, Florida",
   description:
     "Lake Buena Vista es una iglesia adventista del séptimo día ubicada en Orlando, Florida. Ofrecemos servicios religiosos, programas comunitarios y actividades para todas las edades. ¡Únete a nuestra comunidad hoy!",
-  url: "https://lakebuenavista.web.app/",
+  url: "https://lakebuenavista-sda.vercel.app/",
   keywords: [
     'Iglesia Adventista del Séptimo Día',
     'Lake Buena Vista',
