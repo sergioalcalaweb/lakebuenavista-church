@@ -19,10 +19,10 @@ export default function DashNavBar() {
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          className="sm:hidden dark:text-white text-black"
+          className="sm:hidden text-black"
         />
         <NavbarBrand>
-          <Link href="/dashboard" className="flex gap-2 dark:text-white text-black">
+          <Link href="/dashboard" className="flex gap-2  text-black">
             <Logo className="w-[35px]" />
             <div className=" font-normal">Lake Buena Vista</div>
           </Link>

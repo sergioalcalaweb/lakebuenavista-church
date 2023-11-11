@@ -12,11 +12,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <ClerkProvider
-      appearance={{
-        baseTheme: dark
-      }}
-    >
+    <ClerkProvider>
       <html lang="es" className='dark'>
         <body suppressHydrationWarning className={`${inter.className}`}>
           <Providers>
