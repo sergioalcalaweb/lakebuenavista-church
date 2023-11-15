@@ -10,7 +10,9 @@ export const getEvents = async () => {
   });
 
   let saturday = 1;
-  const events: EventApp[] = [];
+  const events: EventApp[] = [
+    { title: 'Cena de amistad', date: Number(new Date('2023-11-18T18:00:00')), link: '/servicios'  },
+  ];
   daysOfMonth.forEach((day) => {
     if(isSaturday(day)) {
       const dayEvents = [
@@ -40,7 +42,7 @@ export const getEvents = async () => {
     }
   });
 
-  return events;
+  return events.sort((a,b) => a.date - b.date);
 }
 
 export const handleOmittedDays = ({

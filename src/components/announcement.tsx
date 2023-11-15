@@ -5,6 +5,7 @@ const Announcement = () => {
       autoPlay
       muted
       controls
+      loop
     >
       <source
         src="https://res.cloudinary.com/dseqdhfur/video/upload/v1700011783/VIDEO-2023-11-10-10-49-43_vigilb.webm"
