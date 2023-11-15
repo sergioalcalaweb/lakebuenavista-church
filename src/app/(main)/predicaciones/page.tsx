@@ -24,7 +24,7 @@ const Predicaciones = () => {
         />
       }
     >
-      <article className="p-5 lg:p-20 flex flex-col gap-10">
+      <article className="px-5 py-10 lg:px-20 flex flex-col gap-10">
         <Suspense fallback={<VideoLoading numberOfItems={5} />}>
           <VideosSection />
         </Suspense>
