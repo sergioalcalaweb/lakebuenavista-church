@@ -12,6 +12,10 @@ const Announcement = () => {
         src="https://res.cloudinary.com/dseqdhfur/video/upload/v1700011783/VIDEO-2023-11-10-10-49-43_vigilb.webm"
         type="video/webm"
       />
+      <source
+        src="https://res.cloudinary.com/dseqdhfur/video/upload/v1700011783/VIDEO-2023-11-10-10-49-43_vigilb.mp4"
+        type="video/mp4"
+      />
       Your browser does not support the video tag.
     </video>
   )
