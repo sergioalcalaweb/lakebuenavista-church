@@ -4,7 +4,6 @@ const Announcement = () => {
       className="w-full h-screen/2 md:h-screen object-cover md:object-fill"
       autoPlay
       muted
-      controls
       loop
       playsInline
     >
