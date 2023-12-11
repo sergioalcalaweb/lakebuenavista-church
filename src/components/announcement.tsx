@@ -25,8 +25,8 @@ import LinkButton from "./link-button"
 
 const Announcement = () => {
   return (
-    <div className="flex flex-col gap-5 items-center">
-      <section className="w-[95%] h-[400px] md:h-screen object-cover md:object-fill relative mx-auto my-10">
+    <div className="max-w-screen-xl mx-auto flex flex-col gap-5 items-center">
+      <section className="w-full h-[300px] md:h-[600px] mt-10 relative">
         <Image
           alt="biblia"
           src="/image/announcements/revive.jpg"
@@ -34,7 +34,7 @@ const Announcement = () => {
           fill
           loading="eager"
           priority={true}
-          className="inset-0 md:rounded-lg aspect-square shadow-xl"
+          className="inset-0 md:rounded-lg shadow-xl"
           sizes="100vw"
         />
       </section>
