@@ -40,6 +40,10 @@ export default function Home() {
         </Motion>
       </section>
 
+      <section>
+        <Announcement />
+      </section>
+
       <div className="bg-white">
         <Motion
           type="section"
@@ -64,10 +68,6 @@ export default function Home() {
           </p>
         </Motion>
       </div>
-
-      <section>
-        <Announcement />
-      </section>
 
       <div className="bg-slate-100">
         <section className="mx-auto max-w-screen-xl px-10 py-20 flex flex-col lg:flex-row gap-10">

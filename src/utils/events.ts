@@ -11,7 +11,13 @@ export const getEvents = async () => {
 
   let saturday = 1;
   const events: EventApp[] = [
-    { title: 'Cena de amistad', date: Number(new Date('2023-11-18T18:00:00')), link: '/servicios'  },
+    { title: '¡REVIVE!', date: Number(new Date('2023-12-09T19:30:00')), link: '/revive'  },
+    { title: '¡REVIVE!', date: Number(new Date('2023-12-10T19:30:00')), link: '/revive'  },
+    { title: '¡REVIVE!', date: Number(new Date('2023-12-11T19:30:00')), link: '/revive'  },
+    { title: '¡REVIVE!', date: Number(new Date('2023-12-12T19:30:00')), link: '/revive'  },
+    { title: '¡REVIVE!', date: Number(new Date('2023-12-13T19:30:00')), link: '/revive'  },
+    { title: '¡REVIVE!', date: Number(new Date('2023-12-14T19:30:00')), link: '/revive'  },
+    { title: '¡REVIVE!', date: Number(new Date('2023-12-15T19:30:00')), link: '/revive'  },
   ];
   daysOfMonth.forEach((day) => {
     if(isSaturday(day)) {
