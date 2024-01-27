@@ -1,7 +1,7 @@
 "use client"
 
 import { EventApp } from "@/types"
-import { format } from "date-fns"
+import { Locale, format } from "date-fns"
 import { DayEventItem } from "./day-event-item"
 
 interface MonthlyDayProps {
