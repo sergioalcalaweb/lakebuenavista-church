@@ -29,7 +29,7 @@ export const EmailContactUser = ({
       <Body style={main}>
         <Container style={container}>
           <Section style={logo}>
-            <Img width={114} src={`${siteConfig.url}/logo.svg`} />
+            <Img width={114} src={`${siteConfig.url}logo.svg`} />
           </Section>
           <Section style={content}>
             <Text style={paragraph}>
