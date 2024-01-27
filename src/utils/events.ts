@@ -1,5 +1,5 @@
 import { EventApp } from "@/types";
-import { eachDayOfInterval, getDay, isSaturday, isThursday, isWednesday, lastDayOfMonth, startOfMonth } from "date-fns";
+import { eachDayOfInterval, getDay, isSaturday, isThursday, isWednesday, lastDayOfMonth, startOfMonth, Locale } from "date-fns";
 import { daysInWeek } from "@/utils/constants";
 
 export const getEvents = async () => {

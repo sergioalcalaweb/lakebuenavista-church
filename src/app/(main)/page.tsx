@@ -40,10 +40,6 @@ export default function Home() {
         </Motion>
       </section>
 
-      <section>
-        <Announcement />
-      </section>
-
       <div className="bg-white">
         <Motion
           type="section"
