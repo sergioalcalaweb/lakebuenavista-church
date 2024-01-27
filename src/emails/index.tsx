@@ -1,4 +1,4 @@
-import { siteConfig } from '../config/site';
+import { siteConfig } from "../config/site"
 import {
   Body,
   Container,
@@ -8,17 +8,20 @@ import {
   Preview,
   Section,
   Text,
-} from '@react-email/components';
-import * as React from 'react';
+} from "@react-email/components"
+import * as React from "react"
 
 interface EmailContactUserProps {
-  name?: string;
+  name: string
+  email: string
+  message: string
 }
 
 export const EmailContactUser = ({
-  name = 'zenorocha',
+  name = "zenorocha",
+  message = "hola mundo",
+  email = "test@test.com",
 }: EmailContactUserProps) => {
-
   return (
     <Html>
       <Head />
@@ -29,90 +32,85 @@ export const EmailContactUser = ({
             <Img width={114} src={`${siteConfig.url}/logo.svg`} />
           </Section>
           <Section style={content}>
-            <Text style={paragraph}>Hola {name},</Text>
             <Text style={paragraph}>
-              ¡Gracias por visitar nuestro sitio web y por ponerte en contacto con nuestra congregación adventista del Séptimo Día! 
-              Es un gusto recibir tu mensaje y estamos emocionados de que estés interesado en conocer más sobre nuestra comunidad.
+              Mensaje de <strong>{name}</strong> desde el formulario de contacto
+              de la pagina web de la iglesia
             </Text>
             <Text style={paragraph}>
-              Si tienes más preguntas o deseas obtener detalles adicionales sobre nuestra congregación y actividades, no dudes en 
-              hacérnoslo saber. Estamos aquí para servirte y esperamos conocerte pronto en persona.
+              <strong>Mensaje:</strong>
             </Text>
+            <Text style={paragraph}>{message}</Text>
             <Text style={paragraph}>
-              Gracias nuevamente por tu interés en nuestra comunidad adventista del Séptimo Día. ¡Que Dios te bendiga y te guíe en 
-              cada paso de tu viaje espiritual!
-            </Text>
-            <Text style={paragraph}>
-              Con afecto cristiano,
-              <br />
-              Pastor Abel Morrobel
+              Puedes responderle a {name} a su correo{" "}
+              <a href={`mailto:${email}`}>{email}</a>
             </Text>
           </Section>
         </Container>
 
         <Section style={footer}>
-          <Text style={{ textAlign: 'center', color: '#706a7b' }}>
-            © 2023  Lake Buena Vista Spanish SDA<br />
+          <Text style={{ textAlign: "center", color: "#706a7b" }}>
+            © 2023 Lake Buena Vista Spanish SDA
+            <br />
             3979 S Orange Blossom Trl, Orlando, FL, United States, Florida
           </Text>
         </Section>
       </Body>
     </Html>
-  );
-};
+  )
+}
 
-export default EmailContactUser;
+export default EmailContactUser
 
-const fontFamily = 'HelveticaNeue,Helvetica,Arial,sans-serif';
+const fontFamily = "HelveticaNeue,Helvetica,Arial,sans-serif"
 
 const main = {
-  backgroundColor: '#efeef1',
+  backgroundColor: "#efeef1",
   fontFamily,
-};
+}
 
 const paragraph = {
   lineHeight: 1.5,
   fontSize: 14,
-};
+}
 
 const container = {
-  width: '580px',
-  margin: '30px auto',
-  backgroundColor: '#ffffff',
-};
+  width: "580px",
+  margin: "30px auto",
+  backgroundColor: "#ffffff",
+}
 
 const footer = {
-  width: '580px',
-  margin: '0 auto',
-};
+  width: "580px",
+  margin: "0 auto",
+}
 
 const content = {
-  padding: '5px 50px 10px 60px',
-};
+  padding: "5px 50px 10px 60px",
+}
 
 const logo = {
-  display: 'flex',
-  justifyContent: 'center',
-  alingItems: 'center',
+  display: "flex",
+  justifyContent: "center",
+  alingItems: "center",
   padding: 30,
-  backgroundColor: '#000'
-};
+  backgroundColor: "#000",
+}
 
 const sectionsBorders = {
-  width: '100%',
-  display: 'flex',
-};
+  width: "100%",
+  display: "flex",
+}
 
 const sectionBorder = {
-  borderBottom: '1px solid rgb(238,238,238)',
-  width: '249px',
-};
+  borderBottom: "1px solid rgb(238,238,238)",
+  width: "249px",
+}
 
 const sectionCenter = {
-  borderBottom: '1px solid rgb(0,0,0)',
-  width: '102px',
-};
+  borderBottom: "1px solid rgb(0,0,0)",
+  width: "102px",
+}
 
 const link = {
-  textDecoration: 'underline',
-};
+  textDecoration: "underline",
+}

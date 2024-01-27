@@ -4,23 +4,20 @@ import { Resend } from "resend";
 import { EmailContactUser } from '../../../emails/index';
 
 // export const runtime = "edge";
-
 const resend = new Resend(RESEND_API_KEY);
 
-export async function GET(request: Request) {
-  console.log('entro')
+export async function POST(request: Request) {
   try {
     const res = await request.json();
     const { email, message, name } = res;
-    await resend.sendEmail({
+    await resend.emails.send({
       from: EMAIL_FROM || 'onboarding@resend.dev',
-      to: email,
+      to: 'checo.ipn@gmail.com',
       subject: 'Gracias por tu mensaje LBV SDA',
-      react: EmailContactUser({name}),
+      react: EmailContactUser({name, message, email}),
     });
     return NextResponse.json({test: 'success'})
   } catch (error) {
-    console.log('entro error', error)
     return NextResponse.json({ error });
   }
 }
