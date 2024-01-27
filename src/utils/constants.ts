@@ -1,4 +1,4 @@
-import { enUS } from "date-fns/locale";
+import { Locale, enUS } from "date-fns/locale";
 
 interface Day {
   day: number;
