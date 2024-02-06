@@ -1,3 +1,4 @@
+import { getYear } from "date-fns";
 import { Locale, enUS } from "date-fns/locale";
 
 interface Day {
@@ -55,3 +56,5 @@ export const daysInWeek = ({ locale = enUS } : { locale: Locale}) : Day[] => [
   { day: 5, label: locale.localize?.day(5) },
   { day: 6, label: locale.localize?.day(6) },
 ];
+
+export const getActualYear = new Date().getFullYear();

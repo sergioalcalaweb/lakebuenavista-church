@@ -4,6 +4,7 @@ import {
   Body,
   Container,
   Head,
+  Heading,
   Html,
   Img,
   Preview,
@@ -12,38 +13,51 @@ import {
 } from "@react-email/components"
 import * as React from "react"
 
-interface EmailContactUserProps {
-  name: string
-  email: string
-  message: string
+interface EmailThanksProps {
+  name?: string
 }
 
-export const EmailContactUser = ({
-  name,
-  message,
-  email,
-}: EmailContactUserProps) => {
+export const EmailThanks = ({ name }: EmailThanksProps) => {
   return (
     <Html>
       <Head />
-      <Preview>Mensaje recibido desde el sitio web</Preview>
+      <Preview>Gracias por ponerte en contacto con nostros</Preview>
       <Body style={main}>
         <Container style={container}>
           <Section style={logo}>
-            <Img width={114} src={`${siteConfig.url}logo.svg`} />
+            <Img width={114} src={`${siteConfig.url}/logo.svg`} />
           </Section>
           <Section style={content}>
+            <Heading
+              style={{
+                fontSize: 32,
+                fontWeight: "bold",
+                textAlign: "center",
+              }}
+            >
+              Hola {name}
+            </Heading>
             <Text style={paragraph}>
-              Mensaje de <strong>{name}</strong> desde el formulario de contacto
-              de la pagina web de la iglesia
+              ¡Gracias por visitar nuestro sitio web y por ponerte en contacto
+              con nuestra congregación adventista del Séptimo Día! Es un gusto
+              recibir tu mensaje y estamos emocionados de que estés interesado
+              en conocer más sobre nuestra comunidad.
             </Text>
             <Text style={paragraph}>
-              <strong>Mensaje:</strong>
+              Si tienes más preguntas o deseas obtener detalles adicionales
+              sobre nuestra congregación y actividades, no dudes en hacérnoslo
+              saber. Estamos aquí para servirte y esperamos conocerte pronto en
+              persona.
             </Text>
-            <Text style={paragraph}>{message}</Text>
             <Text style={paragraph}>
-              Puedes responderle a {name} a su correo{" "}
-              <a href={`mailto:${email}`}>{email}</a>
+              Gracias nuevamente por tu interés en nuestra comunidad adventista
+              del Séptimo Día. ¡Que Dios te bendiga y te guíe en cada paso de tu
+              viaje espiritual!
+            </Text>
+            <Text style={paragraph}>
+              Con afecto cristiano,
+              <br />
+              Pastor Abel Morrobel
             </Text>
           </Section>
         </Container>
@@ -60,13 +74,11 @@ export const EmailContactUser = ({
   )
 }
 
-EmailContactUser.PreviewProps = {
-  name: "zenorocha",
-  message: "hola mundo",
-  email: "test@test.com",
-} as EmailContactUserProps
+EmailThanks.PreviewProps = {
+  name: "Alan",
+} as EmailThanksProps
 
-export default EmailContactUser
+export default EmailThanks
 
 const fontFamily = "HelveticaNeue,Helvetica,Arial,sans-serif"
 
