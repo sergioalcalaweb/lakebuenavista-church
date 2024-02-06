@@ -1,27 +1,23 @@
-import Link from "next/link";
+import { Button } from "@nextui-org/button"
+import Link from "next/link"
 
 interface LinkButtonProps {
-  link: string,
-  text: string,
-  target?: string;
+  link: string
+  text: string
+  target?: string
 }
 
-const LinkButton = ({link, text, target = '_self'} : LinkButtonProps ) => (
-  <Link
-    className="group relative inline-block w-[250px] text-center overflow-hidden border border-gray-600 px-8 py-3 focus:outline-none focus:ring"
+const LinkButton = ({ link, text, target = "_self" }: LinkButtonProps) => (
+  <Button
+    as={Link}
     href={link}
     target={target}
+    variant="solid"
+    color="default"
+    size="lg"
   >
-    <span
-      className="absolute inset-y-0 left-0 w-[2px] bg-gray-600 transition-all group-hover:w-full group-active:bg-gray-500"
-    ></span>
-
-    <span
-      className="relative text-sm font-light text-gray-600 transition-colors group-hover:text-white"
-    >
-      {text}
-    </span>
-  </Link>
+    {text}
+  </Button>
 )
- 
-export default LinkButton;
+
+export default LinkButton

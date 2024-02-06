@@ -1,5 +1,6 @@
 "use client"
 
+import { Button } from "@nextui-org/button"
 import axios from "axios"
 import { useForm } from "react-hook-form"
 import { Toaster, toast } from "sonner"
@@ -79,16 +80,16 @@ const ContactForm = () => {
       </div>
       <Toaster />
       <div className="mt-4 text-center">
-        <button
+        <Button
           type="submit"
-          disabled={!isValid || isSubmitting}
-          className="group relative inline-block w-[250px] text-center overflow-hidden border border-gray-600 px-8 py-3 focus:outline-none focus:ring disabled:opacity-75 disabled:cursor-not-allowed"
+          variant="solid"
+          color="default"
+          size="lg"
+          disabled={!isValid}
+          isLoading={isSubmitting}
         >
-          <span className="absolute inset-y-0 left-0 w-[2px] bg-gray-600 transition-all group-hover:w-full group-active:bg-gray-500"></span>
-          <span className="relative text-sm font-light text-gray-600 transition-colors group-hover:text-white">
-            Enviar
-          </span>
-        </button>
+          Enviar
+        </Button>
       </div>
     </form>
   )
