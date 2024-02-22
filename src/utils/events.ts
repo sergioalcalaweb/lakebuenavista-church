@@ -1,5 +1,5 @@
 import { EventApp } from "@/types";
-import { eachDayOfInterval, getDay, isSaturday, isThursday, isWednesday, lastDayOfMonth, startOfMonth, Locale } from "date-fns";
+import { eachDayOfInterval, getDay, isSaturday, isThursday, isWednesday, lastDayOfMonth, startOfMonth, Locale, isFriday } from "date-fns";
 import { daysInWeek } from "@/utils/constants";
 
 export const getEvents = async () => {
@@ -10,15 +10,7 @@ export const getEvents = async () => {
   });
 
   let saturday = 1;
-  const events: EventApp[] = [
-    { title: '¡REVIVE!', date: Number(new Date('2023-12-09T19:30:00')), link: '/revive'  },
-    { title: '¡REVIVE!', date: Number(new Date('2023-12-10T19:30:00')), link: '/revive'  },
-    { title: '¡REVIVE!', date: Number(new Date('2023-12-11T19:30:00')), link: '/revive'  },
-    { title: '¡REVIVE!', date: Number(new Date('2023-12-12T19:30:00')), link: '/revive'  },
-    { title: '¡REVIVE!', date: Number(new Date('2023-12-13T19:30:00')), link: '/revive'  },
-    { title: '¡REVIVE!', date: Number(new Date('2023-12-14T19:30:00')), link: '/revive'  },
-    { title: '¡REVIVE!', date: Number(new Date('2023-12-15T19:30:00')), link: '/revive'  },
-  ];
+  let events: EventApp[] = [];
   daysOfMonth.forEach((day) => {
     if(isSaturday(day)) {
       const dayEvents = [
@@ -43,6 +35,12 @@ export const getEvents = async () => {
     if(isThursday(day)) {
       const dayEvents = [
         { title: 'Banco de alimentos', date: day.setHours(15, 0), link: '/servicios'  },
+      ];
+      events.push(...dayEvents);
+    }
+    if(isFriday(day)) {
+      const dayEvents = [
+        { title: 'Entre Amigos', date: day.setHours(19, 30), link: '/servicios'  },
       ];
       events.push(...dayEvents);
     }

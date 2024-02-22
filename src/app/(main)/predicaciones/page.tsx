@@ -3,6 +3,13 @@ import SectionName from "@/components/section-name"
 import VideoLoading from "@/components/video-loading"
 import Image from "next/image"
 import VideosSection from "../../../components/videos-section"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Predicaciones",
+  description:
+    "Sumérgete en la inspiración espiritual con nuestra colección de videos de predicaciones.",
+}
 
 const Predicaciones = () => {
   return (
