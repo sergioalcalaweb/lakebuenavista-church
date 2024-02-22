@@ -2,7 +2,6 @@ import Image from "next/image"
 import Motion from "@/components/motion"
 import LinkButton from "@/components/link-button"
 import Link from "next/link"
-import Announcement from "@/components/announcement"
 
 export default function Home() {
   return (
