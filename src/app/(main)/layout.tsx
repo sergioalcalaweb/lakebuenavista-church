@@ -22,13 +22,19 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_US",
     url: siteConfig.url,
-    title: siteConfig.name,
+    title: {
+      default: siteConfig.title,
+      template: `%s - ${siteConfig.title}`,
+    },
     description: siteConfig.description,
     siteName: siteConfig.name,
   },
   twitter: {
     card: "summary_large_image",
-    title: siteConfig.name,
+    title: {
+      default: siteConfig.title,
+      template: `%s - ${siteConfig.title}`,
+    },
     description: siteConfig.description,
     creator: "@checoipn",
   },
