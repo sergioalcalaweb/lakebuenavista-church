@@ -36,7 +36,7 @@ export const metadata: Metadata = {
       template: `%s - ${siteConfig.title}`,
     },
     description: siteConfig.description,
-    creator: "@checoipn",
+    creator: "@sergioalcaladev",
   },
 }
 
