@@ -6,6 +6,10 @@ import ContactForm from "./components/contact-form"
 export const metadata: Metadata = {
   title: "Contacto",
   description: "Queremos estar allí para ustedes",
+  openGraph: {
+    title: "Contacto",
+    description: "Queremos estar allí para ustedes",
+  },
 }
 
 const Contact = () => {

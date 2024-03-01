@@ -7,6 +7,11 @@ export const metadata: Metadata = {
   title: "Eventos",
   description:
     "Desde servicios de adoración inspiradores hasta programas comunitarios enriquecedores, nuestros eventos ofrecen oportunidades para el crecimiento espiritual y la conexión comunitaria.",
+  openGraph: {
+    title: "Eventos",
+    description:
+      "Desde servicios de adoración inspiradores hasta programas comunitarios enriquecedores, nuestros eventos ofrecen oportunidades para el crecimiento espiritual y la conexión comunitaria.",
+  },
 }
 
 const Events = () => {

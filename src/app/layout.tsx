@@ -1,8 +1,10 @@
-import './globals.css'
-import { Open_Sans } from 'next/font/google'
-import { Providers } from './providers'
+import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Open_Sans } from "next/font/google"
+import "./globals.css"
+import { Providers } from "./providers"
 
-const inter = Open_Sans({ subsets: ['latin'], weight: "300" })
+const inter = Open_Sans({ subsets: ["latin"], weight: "300" })
 
 export default function RootLayout({
   children,
@@ -10,10 +12,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="es" className='dark'>
+    <html lang="es" className="dark">
       <body suppressHydrationWarning={true} className={`${inter.className}`}>
         <Providers>
           {children}
+          <Analytics />
+          <SpeedInsights />
         </Providers>
       </body>
     </html>

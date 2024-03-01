@@ -9,6 +9,11 @@ export const metadata: Metadata = {
   title: "Predicaciones",
   description:
     "Sumérgete en la inspiración espiritual con nuestra colección de videos de predicaciones.",
+  openGraph: {
+    title: "Predicaciones",
+    description:
+      "Sumérgete en la inspiración espiritual con nuestra colección de videos de predicaciones.",
+  },
 }
 
 const Predicaciones = () => {

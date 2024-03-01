@@ -6,6 +6,10 @@ import AboutImages from "@/components/about-images"
 export const metadata: Metadata = {
   title: "Nosotros",
   description: "Acerca de los Adventistas del Séptimo Día",
+  openGraph: {
+    title: "Nosotros",
+    description: "Acerca de los Adventistas del Séptimo Día",
+  },
 }
 
 const About = () => {

@@ -6,6 +6,11 @@ export const metadata: Metadata = {
   title: "Servicios",
   description:
     "Nuestros servicios religiosos ofrecen un espacio para la reflexión espiritual, la conexión comunitaria y el crecimiento personal.",
+  openGraph: {
+    title: "Servicios",
+    description:
+      "Nuestros servicios religiosos ofrecen un espacio para la reflexión espiritual, la conexión comunitaria y el crecimiento personal.",
+  },
 }
 
 const Services = () => {
