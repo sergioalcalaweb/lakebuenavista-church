@@ -1,5 +1,6 @@
 import Calendar from "@/components/calendar/calendar"
 import SectionName from "@/components/section-name"
+import { getEvents } from "@/utils/events"
 import { Metadata } from "next"
 import Image from "next/image"
 import ogImage from "@/app/(main)/opengraph-image.png"
@@ -35,7 +36,9 @@ export const metadata: Metadata = {
   },
 }
 
-const Events = () => {
+const Events = async () => {
+  const events = await getEvents();
+
   return (
     <SectionName
       name="Eventos"
@@ -56,7 +59,7 @@ const Events = () => {
       }
     >
       <div className="pt-5">
-        <Calendar />
+        <Calendar events={events} />
       </div>
     </SectionName>
   )

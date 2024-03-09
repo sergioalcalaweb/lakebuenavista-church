@@ -23,7 +23,7 @@ export const DayEventItem = ({
         href={link}
         className="flex font-thin flex-1 flex-col text-lg md:text-sm transition-all hover:bg-slate-200"
       >
-        <h3 className='font-normal'>{title}</h3>
+        <p className='font-normal'>{title}</p>
         <div className='flex justify-between items-center mt-4'>
           <p className="text-gray-900" suppressHydrationWarning>{date}</p>
         </div>
