@@ -2,6 +2,7 @@ import SectionName from "@/components/section-name"
 import Image from "next/image"
 import type { Metadata } from "next"
 import ContactForm from "./components/contact-form"
+import ogImage from "@/app/(main)/opengraph-image.png"
 
 export const metadata: Metadata = {
   title: "Contacto",
@@ -9,6 +10,25 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Contacto",
     description: "Queremos estar allí para ustedes",
+    images: [
+      {
+        url: ogImage.src,
+        width: ogImage.width,
+        height: ogImage.height,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contacto",
+    description: "Queremos estar allí para ustedes",
+    images: [
+      {
+        url: ogImage.src,
+        width: ogImage.width,
+        height: ogImage.height,
+      },
+    ],
   },
 }
 

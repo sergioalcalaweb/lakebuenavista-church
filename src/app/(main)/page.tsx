@@ -78,8 +78,16 @@ export default function Home() {
               su fe, hacer nuevos amigos y ser parte de una familia amorosa,
               ¡nos encantaría tenerlo como parte de nuestra comunidad!
             </p>
+
+            <p className="text-gray-500 text">
+              ¡No te pierdas las últimas noticias y actividades emocionantes en
+              la Iglesia! Nuestro Boletín Informativo está repleto de
+              inspiración, eventos comunitarios y recursos espirituales.
+              ¿Quieres mantenerte al día? Haz click en el botón de abajo
+            </p>
+
             <div>
-              <LinkButton link="/contacto" text="Contactanos" />
+              <LinkButton link="/boletin" text="Ir al boletín" />
             </div>
           </div>
           <Motion

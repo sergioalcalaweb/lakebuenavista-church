@@ -2,6 +2,7 @@ import SectionName from "@/components/section-name"
 import Image from "next/image"
 import type { Metadata } from "next"
 import AboutImages from "@/components/about-images"
+import ogImage from "@/app/(main)/opengraph-image.png"
 
 export const metadata: Metadata = {
   title: "Nosotros",
@@ -9,6 +10,25 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Nosotros",
     description: "Acerca de los Adventistas del Séptimo Día",
+    images: [
+      {
+        url: ogImage.src,
+        width: ogImage.width,
+        height: ogImage.height,
+      },
+    ],
+  },
+  twitter: {
+    title: "Nosotros",
+    description: "Acerca de los Adventistas del Séptimo Día",
+    card: "summary_large_image",
+    images: [
+      {
+        url: ogImage.src,
+        width: ogImage.width,
+        height: ogImage.height,
+      },
+    ],
   },
 }
 

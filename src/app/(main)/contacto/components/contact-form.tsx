@@ -1,6 +1,7 @@
 "use client"
 
 import { Button } from "@nextui-org/button"
+import { Input, Textarea } from "@nextui-org/react"
 import axios from "axios"
 import { useForm } from "react-hook-form"
 import { Toaster, toast } from "sonner"
@@ -33,51 +34,49 @@ const ContactForm = () => {
   })
 
   return (
-    <form onSubmit={onSubmit} className="mx-auto mt-8 mb-0 max-w-md space-y-4">
-      <div>
-        <label>Email</label>
-        <input
-          className="input"
-          {...register("email", {
-            required: "ingresa un email",
-            pattern: {
-              value: /\S+@\S+\.\S+/,
-              message: "ingresa un email valido",
-            },
-          })}
-        />
-        {errors.email && <span role="alert">{errors.email.message}</span>}
-      </div>
-      <div>
-        <label>Nombre</label>
-        <input
-          className="input"
-          {...register("name", {
-            required: "ingresa un nombre",
-            minLength: {
-              value: 1,
-              message: "Ingresa un nombre mas grande",
-            },
-          })}
-        />
-        {errors.email && <span role="alert">{errors.email.message}</span>}
-      </div>
-      <div>
-        <label>Mensaje</label>
-
-        <textarea
-          className="input"
-          rows={8}
-          {...register("message", {
-            required: "Ingresa un mensaje valido",
-            minLength: {
-              value: 5,
-              message: "Tu mensaje es muy corto",
-            },
-          })}
-        ></textarea>
-        {errors.message && <span role="alert">{errors.message.message}</span>}
-      </div>
+    <form onSubmit={onSubmit} className="light mx-auto max-w-lg space-y-4">
+      <Input
+        type="email"
+        label="Email"
+        variant="underlined"
+        isInvalid={errors.email ? true : false}
+        errorMessage={errors.email?.message}
+        {...register("email", {
+          required: "ingresa un email",
+          pattern: {
+            value: /\S+@\S+\.\S+/,
+            message: "ingresa un email valido",
+          },
+        })}
+      />
+      <Input
+        type="text"
+        label="Nombre"
+        variant="underlined"
+        isInvalid={errors.email ? true : false}
+        errorMessage={errors.email?.message}
+        {...register("name", {
+          required: "ingresa un nombre",
+          minLength: {
+            value: 1,
+            message: "Ingresa un nombre mas grande",
+          },
+        })}
+      />
+      <Textarea
+        label="Mensaje"
+        variant="underlined"
+        isInvalid={errors.email ? true : false}
+        errorMessage={errors.email?.message}
+        rows={8}
+        {...register("message", {
+          required: "Ingresa un mensaje valido",
+          minLength: {
+            value: 5,
+            message: "Tu mensaje es muy corto",
+          },
+        })}
+      />
       <Toaster />
       <div className="mt-4 text-center">
         <Button

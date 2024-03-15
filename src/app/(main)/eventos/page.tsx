@@ -2,6 +2,7 @@ import Calendar from "@/components/calendar/calendar"
 import SectionName from "@/components/section-name"
 import { Metadata } from "next"
 import Image from "next/image"
+import ogImage from "@/app/(main)/opengraph-image.png"
 
 export const metadata: Metadata = {
   title: "Eventos",
@@ -11,6 +12,26 @@ export const metadata: Metadata = {
     title: "Eventos",
     description:
       "Desde servicios de adoración inspiradores hasta programas comunitarios enriquecedores, nuestros eventos ofrecen oportunidades para el crecimiento espiritual y la conexión comunitaria.",
+    images: [
+      {
+        url: ogImage.src,
+        width: ogImage.width,
+        height: ogImage.height,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Eventos",
+    description:
+      "Desde servicios de adoración inspiradores hasta programas comunitarios enriquecedores, nuestros eventos ofrecen oportunidades para el crecimiento espiritual y la conexión comunitaria.",
+    images: [
+      {
+        url: ogImage.src,
+        width: ogImage.width,
+        height: ogImage.height,
+      },
+    ],
   },
 }
 
