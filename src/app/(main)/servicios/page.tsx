@@ -1,6 +1,7 @@
 import Image from "next/image"
 import SectionName from "@/components/section-name"
 import type { Metadata } from "next"
+import ogImage from "@/app/(main)/opengraph-image.png"
 
 export const metadata: Metadata = {
   title: "Servicios",
@@ -10,6 +11,26 @@ export const metadata: Metadata = {
     title: "Servicios",
     description:
       "Nuestros servicios religiosos ofrecen un espacio para la reflexión espiritual, la conexión comunitaria y el crecimiento personal.",
+    images: [
+      {
+        url: ogImage.src,
+        width: ogImage.width,
+        height: ogImage.height,
+      },
+    ],
+  },
+  twitter: {
+    title: "Servicios",
+    description:
+      "Nuestros servicios religiosos ofrecen un espacio para la reflexión espiritual, la conexión comunitaria y el crecimiento personal.",
+    card: "summary_large_image",
+    images: [
+      {
+        url: ogImage.src,
+        width: ogImage.width,
+        height: ogImage.height,
+      },
+    ],
   },
 }
 

@@ -4,6 +4,7 @@ import VideoLoading from "@/components/video-loading"
 import Image from "next/image"
 import VideosSection from "../../../components/videos-section"
 import { Metadata } from "next"
+import ogImage from "@/app/(main)/opengraph-image.png"
 
 export const metadata: Metadata = {
   title: "Predicaciones",
@@ -13,6 +14,26 @@ export const metadata: Metadata = {
     title: "Predicaciones",
     description:
       "Sumérgete en la inspiración espiritual con nuestra colección de videos de predicaciones.",
+    images: [
+      {
+        url: ogImage.src,
+        width: ogImage.width,
+        height: ogImage.height,
+      },
+    ],
+  },
+  twitter: {
+    title: "Predicaciones",
+    description:
+      "Sumérgete en la inspiración espiritual con nuestra colección de videos de predicaciones.",
+    card: "summary_large_image",
+    images: [
+      {
+        url: ogImage.src,
+        width: ogImage.width,
+        height: ogImage.height,
+      },
+    ],
   },
 }
 
