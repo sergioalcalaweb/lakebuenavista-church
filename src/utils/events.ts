@@ -29,8 +29,8 @@ export const getEvents = async () => {
     const eventsToAdd = durationOfEventInDays.map((day, index) => {
       const title = event.attributes.title_calendar || event.attributes.title;
       const date = event.attributes.conference && index === durationOfEventInDays.length -1 ? 
-        addDays(day.setHours(11, 0), 1) : 
-        addDays(day.setHours(event.attributes.time_init.split(':')[0], event.attributes.time_init.split(':')[1]), 1) ;
+        day.setHours(11, 0) : 
+        day.setHours(event.attributes.time_init.split(':')[0], event.attributes.time_init.split(':')[1]) ;
       const link = `/eventos/${event.attributes.slug}`;
       return {
         title,
