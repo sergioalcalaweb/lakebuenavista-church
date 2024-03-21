@@ -1,8 +1,10 @@
 import { EventApp } from "@/types";
-import { eachDayOfInterval, getDay, lastDayOfMonth, startOfMonth, Locale, format, isSunday, addDays } from "date-fns";
+import { eachDayOfInterval, getDay, lastDayOfMonth, startOfMonth, Locale, format, isSunday, addDays, parse } from "date-fns";
 import { daysInWeek } from "@/utils/constants";
 import { API_URL, NODE_ENV } from "@/config";
 import { Event, ResponseStrapi, Service } from "@/types/events";
+import { parsearHour } from "./time-util";
+import { siteConfig } from "@/config/site";
 
 const OPT: any = NODE_ENV === 'development' ? {cache: "no-cache"} : {next: { revalidate: 3600 }, timeout: 5000};
 
@@ -111,13 +113,16 @@ export const handleOmittedDays = ({
 export const getEvent = async (slug: string): Promise<Event> => {
   const URL = `${API_URL}events?filters[slug][$eq]=${slug}&populate=*`;
   const response: ResponseStrapi = await fetch(URL, OPT).then(res => res.json());
+  
+  const time_init = parsearHour(response.data[0].attributes.time_init);
+  const time_end = parsearHour(response.data[0].attributes.time_end);
 
   return {
     title: response.data[0].attributes.title,
     title_calendar: response.data[0].attributes.title_calendar,
-    link: `/eventos/${response.data[0].attributes.slug}`,
-    time_init: new Date(response.data[0].attributes.time_init),
-    time_end: new Date(response.data[0].attributes.time_end),
+    link: `${siteConfig.url}eventos/${response.data[0].attributes.slug}`,
+    time_init,
+    time_end,
     description: response.data[0].attributes.description,
     blog: response.data[0].attributes.blog,
     image: response.data[0].attributes.image.data.attributes.formats,
@@ -129,12 +134,15 @@ export const getEvent = async (slug: string): Promise<Event> => {
 export const getService = async (slug: string) : Promise<Service> => {
   const URL = `${API_URL}services?filters[slug][$eq]=${slug}&populate=*`;
   const response: ResponseStrapi  = await fetch(URL, OPT).then(res => res.json());
+  const time_init = parsearHour(response.data[0].attributes.time_init);
+  const time_end = parsearHour(response.data[0].attributes.time_end);
+  
   return {
     title: response.data[0].attributes.title,
     title_calendar: response.data[0].attributes.title_calendar,
-    link: `/servicios/${response.data[0].attributes.slug}`,
-    time_init: new Date(response.data[0].attributes.time_init),
-    time_end: new Date(response.data[0].attributes.time_end),
+    link: `${siteConfig.url}servicios/${response.data[0].attributes.slug}`,
+    time_init,
+    time_end,
     description: response.data[0].attributes.description,
     blog: response.data[0].attributes.blog,
     image: response.data[0].attributes.image.data.attributes.formats,
@@ -142,3 +150,5 @@ export const getService = async (slug: string) : Promise<Service> => {
     often: response.data[0].attributes.often.data.attributes.uid,
   }
 }
+
+

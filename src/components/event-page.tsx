@@ -1,9 +1,8 @@
 "use client"
 
 import { Event, Service } from "@/types/events"
-import { Button, Tooltip } from "@nextui-org/react"
 import Image from "next/image"
-import { FaCalendarPlus, FaShareNodes } from "react-icons/fa6"
+import BlogHeader from "./blog-header"
 
 interface EventLayoutProps {
   event: Event | Service
@@ -37,50 +36,7 @@ const EventPage = ({ event, isService }: EventLayoutProps) => {
         </div>
       </div>
       <main className="text-black mx-auto lg:max-w-screen-lg h-fit pb-4 px-4">
-        <header className="pt-4 flex flex-row justify-between items-center">
-          <div className="flex gap-2 items-center">
-            <div className="p-2 bg-gray-200 rounded-xl text-center">
-              <div className="text-warning">16</div>
-              <div className="text-xs">Mar</div>
-            </div>
-            {/* <div>-</div>
-          <div className="p-2 bg-gray-200 rounded-xl text-center">
-            <div className="text-warning">23</div>
-            <div className="text-xs">Mar</div>
-          </div> */}
-            <div>
-              <div className="text-black">Sábado</div>
-              <small className="text-gray-500 font-extrabold">
-                9:15 - 11:00 AM
-              </small>
-            </div>
-          </div>
-          <div className="flex gap-2">
-            {/* pending due to extra steps to implement */}
-            {/* <Tooltip showArrow={true} content="Agregar a calendario">
-              <Button
-                isIconOnly
-                color="warning"
-                variant="bordered"
-                size="lg"
-                aria-label="Agregar a calendario"
-              >
-                <FaCalendarPlus />
-              </Button>
-            </Tooltip> */}
-            <Tooltip showArrow={true} content="Compartir">
-              <Button
-                isIconOnly
-                color="warning"
-                variant="bordered"
-                size="lg"
-                aria-label="Agregar a calendario"
-              >
-                <FaShareNodes />
-              </Button>
-            </Tooltip>
-          </div>
-        </header>
+        <BlogHeader event={event} isService={isService} />
         <article
           className="flex flex-col gap-5 pt-8"
           dangerouslySetInnerHTML={markup}

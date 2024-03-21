@@ -2,8 +2,8 @@ export interface Service {
   title: string;
   title_calendar: string;
   link: string;
-  time_init: Date;
-  time_end: Date;
+  time_init: string;
+  time_end: string;
   description: string;
   blog: string;
   image: ImageFormats;
