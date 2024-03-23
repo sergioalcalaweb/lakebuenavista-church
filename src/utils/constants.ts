@@ -16,6 +16,7 @@ export const publicUrls: string[] = [
   '/nosotros',
   '/servicios',
   '/predicaciones',
+  '/boletin',
   '/eventos',
   '/contacto'
 ];
@@ -36,6 +37,10 @@ export const menuItems: MenuItem[] = [
   {
     path: '/predicaciones',
     name: 'predicaciones'
+  },
+  {
+    path: '/boletin',
+    name: 'boletin'
   },
   {
     path: '/eventos',

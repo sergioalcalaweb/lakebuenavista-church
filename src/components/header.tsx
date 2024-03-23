@@ -62,6 +62,14 @@ const Header = () => {
                 >
                   Predicaciones
                 </Link>
+                <Link
+                  className={`text-white h-16 transition leading-[4rem] font-light border-b-2 ${
+                    url === "/boletin" ? "border-white" : "border-transparent"
+                  } hover:border-white`}
+                  href="/boletin"
+                >
+                  Boletin
+                </Link>
 
                 <Link
                   className={`text-white h-16 transition leading-[4rem] font-light border-b-2 ${
@@ -161,6 +169,15 @@ const Header = () => {
                 href="/predicaciones"
               >
                 Predicaciones
+              </Link>
+
+              <Link
+                className={`flex items-center gap-2 border-l-[3px] ${
+                  url === "/boletin" ? "border-white" : "border-transparent"
+                } px-4 py-3 text-white`}
+                href="/boletin"
+              >
+                Boletin
               </Link>
 
               <Link

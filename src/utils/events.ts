@@ -1,49 +1,78 @@
 import { EventApp } from "@/types";
-import { eachDayOfInterval, getDay, isSaturday, isThursday, isWednesday, lastDayOfMonth, startOfMonth, Locale, isFriday } from "date-fns";
+import { eachDayOfInterval, getDay, lastDayOfMonth, startOfMonth, Locale, format, isSunday, addDays, parse } from "date-fns";
 import { daysInWeek } from "@/utils/constants";
+import { API_URL, NODE_ENV } from "@/config";
+import { Event, ResponseStrapi, Service } from "@/types/events";
+import { parsearHour } from "./time-util";
+import { siteConfig } from "@/config/site";
+
+const OPT: any = NODE_ENV === 'development' ? {cache: "no-cache", timeout: 10000} : {next: { revalidate: 3600 }, timeout: 5000};
 
 export const getEvents = async () => {
 
-  const daysOfMonth = eachDayOfInterval({
-    start: startOfMonth(new Date()),
-    end: lastDayOfMonth(new Date())
+  const start = startOfMonth(new Date());
+  const end = lastDayOfMonth(new Date());
+  let events: EventApp[] = [];
+
+  const URL_SERVICES = `${API_URL}services?fields[0]=title&fields[1]=title_calendar&fields[2]=slug&fields[3]=time_init&fields[4]=day&populate[often][fields][0]=uid`;
+  const URL_EVENTS = `${API_URL}events?fields[0]=title&fields[1]=title_calendar&fields[2]=slug&fields[3]=time_init&fields[4]=time_end&field[date_init]&fields[5]=date_init&fields[6]=date_end&[$gte]=${start}&field[date_end][$lte]=${end}`;
+
+  const { data: services } = await fetch(URL_SERVICES, OPT).then(res => res.json());
+  const { data: eventsInfo } = await fetch(URL_EVENTS, OPT).then(res => res.json());
+
+  eventsInfo.forEach((event: any) => {
+    const durationOfEventInDays = eachDayOfInterval({
+      start: event.attributes.date_init,
+      end: event.attributes.date_end
+    });
+
+    const eventsToAdd = durationOfEventInDays.map((day, index) => {
+      const title = event.attributes.title_calendar || event.attributes.title;
+      const date = event.attributes.conference && index === durationOfEventInDays.length -1 ? 
+        day.setHours(11, 0) : 
+        day.setHours(event.attributes.time_init.split(':')[0], event.attributes.time_init.split(':')[1]) ;
+      const link = `/eventos/${event.attributes.slug}`;
+      return {
+        title,
+        date,
+        link
+      }
+    });
+    
+    events.push(...eventsToAdd);
+
   });
 
-  let saturday = 1;
-  let events: EventApp[] = [];
-  daysOfMonth.forEach((day) => {
-    if(isSaturday(day)) {
-      const dayEvents = [
-        { title: 'Escuela Sabatica', date: day.setHours(9, 15), link: '/servicios'  },
-        { title: 'Culto Divino', date: day.setHours(11, 0), link: '/servicios'  },
-      ];
+  const daysOfMonth = eachDayOfInterval({
+    start,
+    end
+  });
 
-      if (saturday === 1 || saturday === 3) {
-        dayEvents.push({ title: 'Sociedad De Jovenes', date: day.setHours(14, 30), link: '/servicios'  });
+  let week = 1;
+  daysOfMonth.forEach((day) => {
+    const dayOfWeekText = format(day, 'EEEE');
+    const dayEventsByService = services.filter((service: any) => {
+      return dayOfWeekText === service.attributes.day;
+    }).reduce((acc: EventApp[], service: any) => {
+      const title = service.attributes.title_calendar || service.attributes.title;
+      if(
+        service.attributes.often.data.attributes.uid === 'every-week' ||
+        (service.attributes.often.data.attributes.uid === 'first-and-third' && [1,3].includes(week))
+      ) {
+        acc.push({
+          title,
+          date: day.setHours(service.attributes.time_init.split(':')[0], service.attributes.time_init.split(':')[1]),
+          link: `/servicios/${service.attributes.slug}`
+        });
       }
 
-      saturday++;
+      return acc;
+    }, []);
 
-      events.push(...dayEvents);
+    if(isSunday(day)) {
+      week++;
     }
-    if(isWednesday(day)) {
-      const dayEvents = [
-        { title: 'Servicio de Oracion', date: day.setHours(19, 30), link: '/servicios'  },
-      ];
-      events.push(...dayEvents);
-    }
-    if(isThursday(day)) {
-      const dayEvents = [
-        { title: 'Banco de alimentos', date: day.setHours(15, 0), link: '/servicios'  },
-      ];
-      events.push(...dayEvents);
-    }
-    if(isFriday(day)) {
-      const dayEvents = [
-        { title: 'Entre Amigos', date: day.setHours(19, 30), link: '/servicios'  },
-      ];
-      events.push(...dayEvents);
-    }
+    events.push(...dayEventsByService);
   });
 
   return events.sort((a,b) => a.date - b.date);
@@ -80,3 +109,46 @@ export const handleOmittedDays = ({
 
   return { headings, daysToRender, padding };
 };
+
+export const getEvent = async (slug: string): Promise<Event> => {
+  const URL = `${API_URL}events?filters[slug][$eq]=${slug}&populate=*`;
+  const response: ResponseStrapi = await fetch(URL, OPT).then(res => res.json());
+  
+  const time_init = parsearHour(response.data[0].attributes.time_init);
+  const time_end = parsearHour(response.data[0].attributes.time_end);
+
+  return {
+    title: response.data[0].attributes.title,
+    title_calendar: response.data[0].attributes.title_calendar,
+    link: `${siteConfig.url}eventos/${response.data[0].attributes.slug}`,
+    time_init,
+    time_end,
+    description: response.data[0].attributes.description,
+    blog: response.data[0].attributes.blog,
+    image: response.data[0].attributes.image.data.attributes.formats,
+    date_init: new Date(response.data[0].attributes.date_init),
+    date_end: new Date(response.data[0].attributes.date_end),
+  };
+}
+
+export const getService = async (slug: string) : Promise<Service> => {
+  const URL = `${API_URL}services?filters[slug][$eq]=${slug}&populate=*`;
+  const response: ResponseStrapi  = await fetch(URL, OPT).then(res => res.json());
+  const time_init = parsearHour(response.data[0].attributes.time_init);
+  const time_end = parsearHour(response.data[0].attributes.time_end);
+  
+  return {
+    title: response.data[0].attributes.title,
+    title_calendar: response.data[0].attributes.title_calendar,
+    link: `${siteConfig.url}servicios/${response.data[0].attributes.slug}`,
+    time_init,
+    time_end,
+    description: response.data[0].attributes.description,
+    blog: response.data[0].attributes.blog,
+    image: response.data[0].attributes.image.data.attributes.formats,
+    day: response.data[0].attributes.day,
+    often: response.data[0].attributes.often.data.attributes.uid,
+  }
+}
+
+
