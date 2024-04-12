@@ -1,5 +1,5 @@
 import { EventApp } from "@/types";
-import { eachDayOfInterval, getDay, lastDayOfMonth, startOfMonth, Locale, format, isSunday, addDays, parse } from "date-fns";
+import { eachDayOfInterval, getDay, lastDayOfMonth, startOfMonth, Locale, format, isSunday, addDays, parseISO } from "date-fns";
 import { daysInWeek } from "@/utils/constants";
 import { API_URL, NODE_ENV } from "@/config";
 import { Event, ResponseStrapi, Service } from "@/types/events";
@@ -117,6 +117,9 @@ export const getEvent = async (slug: string): Promise<Event> => {
   const time_init = parsearHour(response.data[0].attributes.time_init);
   const time_end = parsearHour(response.data[0].attributes.time_end);
 
+  const date_init = new Date(response.data[0].attributes.date_init);
+  const date_end = new Date(response.data[0].attributes.date_end);
+
   return {
     title: response.data[0].attributes.title,
     title_calendar: response.data[0].attributes.title_calendar,
@@ -126,8 +129,8 @@ export const getEvent = async (slug: string): Promise<Event> => {
     description: response.data[0].attributes.description,
     blog: response.data[0].attributes.blog,
     image: response.data[0].attributes.image.data.attributes.formats,
-    date_init: new Date(response.data[0].attributes.date_init),
-    date_end: new Date(response.data[0].attributes.date_end),
+    date_init: parseISO(response.data[0].attributes.date_init),
+    date_end: parseISO(response.data[0].attributes.date_end),
   };
 }
 

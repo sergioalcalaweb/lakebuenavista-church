@@ -4,7 +4,7 @@ import { Event, Service } from "@/types/events"
 import { rangeOfHours } from "@/utils/time-util"
 import { Button, Tooltip } from "@nextui-org/react"
 import { FaShareNodes } from "react-icons/fa6"
-import { format, getDate, getDay, getMonth } from "date-fns"
+import { format, getDate } from "date-fns"
 import { es } from "date-fns/locale"
 import { useEffect, useState } from "react"
 
@@ -39,8 +39,8 @@ const ServiceComponent = (service: Service) => {
 }
 
 const EventComponent = (event: Event) => {
-  const dateInit = event.date_init
-  const dateEnd = event.date_end
+  const dateInit = event.date_init;
+  const dateEnd = event.date_end;
 
   return (
     <div className="flex gap-2 items-center">
