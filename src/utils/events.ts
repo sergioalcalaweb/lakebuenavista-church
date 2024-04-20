@@ -1,6 +1,6 @@
 import { EventApp } from "@/types";
 import { UTCDate } from "@date-fns/utc";
-import { eachDayOfInterval, getDay, lastDayOfMonth, startOfMonth, Locale, format, isSunday, addDays, parseISO } from "date-fns";
+import { eachDayOfInterval, getDay, lastDayOfMonth, startOfMonth, Locale, format, isSunday } from "date-fns";
 import { daysInWeek } from "@/utils/constants";
 import { API_URL, NODE_ENV } from "@/config";
 import { Event, ResponseStrapi, Service } from "@/types/events";
@@ -23,15 +23,17 @@ export const getEvents = async () => {
 
   eventsInfo.forEach((event: any) => {
     const durationOfEventInDays = eachDayOfInterval({
-      start: event.attributes.date_init,
-      end: event.attributes.date_end
+      start: new Date(event.attributes.date_init),
+      end: new Date(event.attributes.date_end)
     });
 
     const eventsToAdd = durationOfEventInDays.map((day, index) => {
       const title = event.attributes.title_calendar || event.attributes.title;
+      const hours = event.attributes.time_init.split(':')[0];
+      const minutes = event.attributes.time_init.split(':')[1];
       const date = event.attributes.conference && index === durationOfEventInDays.length -1 ? 
         day.setHours(11, 0) : 
-        day.setHours(event.attributes.time_init.split(':')[0], event.attributes.time_init.split(':')[1]) ;
+        day.setHours(hours, minutes);
       const link = `/eventos/${event.attributes.slug}`;
       return {
         title,
@@ -118,8 +120,8 @@ export const getEvent = async (slug: string): Promise<Event> => {
   const time_init = parsearHour(response.data[0].attributes.time_init);
   const time_end = parsearHour(response.data[0].attributes.time_end);
 
-  const date_init = new UTCDate(response.data[0].attributes.date_init);
-  const date_end = new UTCDate(response.data[0].attributes.date_end);
+  const date_init = new Date(response.data[0].attributes.date_init);
+  const date_end = new Date(response.data[0].attributes.date_end);
 
   return {
     title: response.data[0].attributes.title,
@@ -130,8 +132,8 @@ export const getEvent = async (slug: string): Promise<Event> => {
     description: response.data[0].attributes.description,
     blog: response.data[0].attributes.blog,
     image: response.data[0].attributes.image.data.attributes.formats,
-    date_init: parseISO(response.data[0].attributes.date_init),
-    date_end: parseISO(response.data[0].attributes.date_end),
+    date_init,
+    date_end,
   };
 }
 
