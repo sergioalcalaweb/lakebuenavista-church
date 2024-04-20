@@ -1,5 +1,4 @@
 import { EventApp } from "@/types";
-import { UTCDate } from "@date-fns/utc";
 import { eachDayOfInterval, getDay, lastDayOfMonth, startOfMonth, Locale, format, isSunday } from "date-fns";
 import { daysInWeek } from "@/utils/constants";
 import { API_URL, NODE_ENV } from "@/config";
@@ -7,8 +6,7 @@ import { Event, ResponseStrapi, Service } from "@/types/events";
 import { parsearHour } from "./time-util";
 import { siteConfig } from "@/config/site";
 
-const OPT: any ={cache: "no-cache", timeout: 10000};
-// const OPT: any = NODE_ENV === 'development' ? {cache: "no-cache", timeout: 10000} : {next: { revalidate: 3600 }, timeout: 5000};
+const OPT: any = NODE_ENV === 'development' ? {cache: "no-cache", timeout: 10000} : {next: { revalidate: 3600 }, timeout: 5000};
 
 export const getEvents = async () => {
 
@@ -23,9 +21,12 @@ export const getEvents = async () => {
   const { data: eventsInfo } = await fetch(URL_EVENTS, OPT).then(res => res.json());
 
   eventsInfo.forEach((event: any) => {
+    const dateInit = new Date(event.attributes.date_init).toUTCString();
+    const dateEnd = new Date(event.attributes.date_end).toUTCString(); 
+
     const durationOfEventInDays = eachDayOfInterval({
-      start: new Date(event.attributes.date_init),
-      end: new Date(event.attributes.date_end)
+      start: dateInit,
+      end: dateEnd
     });
 
     const eventsToAdd = durationOfEventInDays.map((day, index) => {
