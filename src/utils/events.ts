@@ -7,7 +7,8 @@ import { Event, ResponseStrapi, Service } from "@/types/events";
 import { parsearHour } from "./time-util";
 import { siteConfig } from "@/config/site";
 
-const OPT: any = NODE_ENV === 'development' ? {cache: "no-cache", timeout: 10000} : {next: { revalidate: 3600 }, timeout: 5000};
+const OPT: any ={cache: "no-cache", timeout: 10000};
+// const OPT: any = NODE_ENV === 'development' ? {cache: "no-cache", timeout: 10000} : {next: { revalidate: 3600 }, timeout: 5000};
 
 export const getEvents = async () => {
 
