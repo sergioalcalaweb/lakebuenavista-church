@@ -187,7 +187,7 @@ const Services = () => {
               radius="full"
               size="sm"
               as={Link}
-              href="/servicios/banco-de-alimentos"
+              href="/servicios/together-strong"
             >
               Saber más
             </Button>
